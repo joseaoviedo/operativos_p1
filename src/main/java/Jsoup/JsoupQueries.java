@@ -1,18 +1,20 @@
 package Jsoup;
 
 import Selenium.Base;
+import org.jsoup.Connection;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 import org.openqa.selenium.WebDriver;
+
 import java.io.IOException;
 
 //Cambiar los returns
 public class JsoupQueries {
 
 
-    Base selenium;
+   Base selenium;
 
 
 
