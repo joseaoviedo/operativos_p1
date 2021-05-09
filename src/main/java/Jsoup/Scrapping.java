@@ -256,9 +256,7 @@ public class Scrapping
     public String timeToComplete(String name){
         String time = null;
         try {
-            String SearchString = name.replaceAll(" ", "+");
-            System.out.println(SearchString);
-            String url = "https://howlongtobeat.com/game?id=1#search";
+            String url = "https://howlongtobeat.com/#search";
             System.out.println(url);
             WebDriver driver = null;
             selenium = new Base(driver);
@@ -293,6 +291,6 @@ public class Scrapping
         //i.price_Amazon("Dead Cells");
         //i.price_Amazon("ghost of tsushima");
         //i.score_Metacritic("ghost of tsushima");
-        System.out.println(i.timeToComplete("Mario"));
+        System.out.println(i.timeToComplete("Dead Cells"));
     }
 }
