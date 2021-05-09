@@ -40,5 +40,17 @@ public class Game {
     public boolean isXboxStore() {
         return xboxStore;
     }
+
+    @Override
+    public String toString() {
+        return "Game{" +
+                "title='" + title + '\'' +
+                ", eShop=" + eShop +
+                ", psStore=" + psStore +
+                ", amazon=" + amazon +
+                ", xboxStore=" + xboxStore +
+                ", steam=" + steam +
+                '}';
+    }
 }
 
