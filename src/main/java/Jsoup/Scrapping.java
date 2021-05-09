@@ -8,6 +8,7 @@ import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import Selenium.Base;
 import org.openqa.selenium.WebElement;
@@ -257,44 +258,29 @@ public class Scrapping
         try {
             String SearchString = name.replaceAll(" ", "+");
             System.out.println(SearchString);
-
             String url = "https://howlongtobeat.com/game?id=1#search";
             System.out.println(url);
-            System.setProperty("webdriver.chrome.driver", "src/main/resources/Driver/chromedriver.exe");
-            WebDriver driver = new ChromeDriver();
-            WebDriverWait wait = new WebDriverWait(driver, 50);
-            driver.manage().timeouts().implicitlyWait(1, TimeUnit.SECONDS);
-            driver.manage().window().maximize();
-            driver.get(url);
+            WebDriver driver = null;
+            selenium = new Base(driver);
+            driver = selenium.chromeDriverConnection();
+            selenium.visit(url);
             WebElement input = driver.findElement(By.xpath("//*[@id=\"global_search_box\"]"));
             input.sendKeys(name);
-            Thread.sleep(1000);
+            Thread.sleep(2000);
             WebElement firstItem = driver.findElement(By.xpath("//*[@id=\"global_search_content\"]/ul/li[1]/div[2]/h3/a"));
-            wait.until(ExpectedConditions.elementToBeClickable(firstItem));
             firstItem.click();
-            Thread.sleep(1000);
+            Thread.sleep(2000);
             WebElement timeElement = driver.findElement(By.xpath("//*[@id=\"global_site\"]/div[2]/div/div[2]/div[1]/ul/li[4]/div"));
             time = timeElement.getText();
-            /**
-            url = selenium.getDriver().getCurrentUrl();
-            selenium.getDriver().close();
+            driver.close();
 
-            Document amazonDoc = Jsoup.connect(url).get();
-            Element GameTitle = amazonDoc.selectFirst("#productTitle");
-
-            //Elements Price = amazonDoc.select("#a-popover-content-3 > table > tbody > tr:nth-child(5) > td.a-span2.a-text-right > span");
-            Elements Price = amazonDoc.select("#priceblock_ourprice");
-
-
-            System.out.println(GameTitle);
-            System.out.println("Price:"+ Price.text());
-             */
-
-        } catch (IndexOutOfBoundsException | InterruptedException e) {
+        } catch (IndexOutOfBoundsException e) {
             System.out.println("Your search returned 0 results");
             e.printStackTrace();
         } catch (NullPointerException e){
             System.out.println("Element not found");
+            e.printStackTrace();
+        } catch (InterruptedException e) {
             e.printStackTrace();
         }
         return time;
