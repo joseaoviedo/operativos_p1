@@ -35,7 +35,16 @@ public class StatusNotifier {
         }
     }
 
-    public static void sendResult(){
-
+    public static void sendResult(String result){
+        try {
+            Socket clientSocket = new Socket(Constants.SERVER_IP, Constants.SERVER_PORT);
+            JSONObject object = new JSONObject();
+            object.put("result", result);
+            DataOutputStream outputStream = new DataOutputStream(clientSocket.getOutputStream());
+            outputStream.writeUTF(object.toString());
+            outputStream.close();
+        }catch (IOException e){
+            e.printStackTrace();
+        }
     }
 }

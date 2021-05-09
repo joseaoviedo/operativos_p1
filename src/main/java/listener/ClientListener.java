@@ -29,7 +29,13 @@ public class ClientListener implements Runnable{
                 JSONObject object = (JSONObject) parser.parse(message);
                 if(object.containsKey("gameToSearch")){
                     StatusNotifier.setAvailable(false);
-                    //Buscar juego
+                    try{
+                        System.out.println(object);
+                        Thread.sleep(5000);
+                        StatusNotifier.sendResult("Complete");
+                    }catch (Exception e){
+                        e.printStackTrace();
+                    }
                     StatusNotifier.setAvailable(true);
                 }
             }
