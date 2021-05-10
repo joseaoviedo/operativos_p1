@@ -10,5 +10,6 @@
         <module name="operativos_p1" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel target="8" />
   </component>
 </project>

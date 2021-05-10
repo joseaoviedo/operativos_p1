@@ -3,6 +3,11 @@ package Jsoup;
 import java.io.IOException;
 import java.util.concurrent.*;
 
+import Model.Game;
+import org.json.JSONArray;
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
@@ -18,19 +23,14 @@ import org.openqa.selenium.support.ui.WebDriverWait;
  * Indeed Job Search Hello World Program
  *
  */
-public class Scrapping implements Callable <String>
+public class Scrapping
 {
-    private String Name;
-    private int code;
-    Base selenium;
 
-    private final ExecutorService fixedThreadPool = Executors.newFixedThreadPool(Runtime.getRuntime().availableProcessors());
+    public Base selenium;
 
-    public Scrapping(String gameName, int storeCode){
-        Name = gameName;
-        code = storeCode;
-    }
+    //private final ExecutorService fixedThreadPool = Executors.newFixedThreadPool(Runtime.getRuntime().availableProcessors());
 
+/*
     public String call() throws IOException {
 
         System.out.println("Thread: " + Name + "Web: " + code);
@@ -83,8 +83,8 @@ public class Scrapping implements Callable <String>
         }
         return value;
     }
-
-    private String precio_playStation(String Name) throws IOException {
+*/
+    public String precio_playStation(String Name) throws IOException {
         String result = null;
         try {
 
@@ -96,7 +96,7 @@ public class Scrapping implements Callable <String>
 
             WebDriver driver = null;
             selenium = new Base(driver);
-            selenium.chromeDriverConnection();
+            selenium.fireFoxDriverConnection();
             selenium.visit(steamURL);
             new WebDriverWait(selenium.getDriver(), 20).until(ExpectedConditions.
                     elementToBeClickable(By.xpath("//*[@id=\"main\"]/section/div/ul/li[1]/div/a/div/div[1]/span[2]/img[2]")));
@@ -120,13 +120,11 @@ public class Scrapping implements Callable <String>
         return result;
     }
 
-
-
-    private String precio_NintendoEshop(String link) throws IOException {
+    public String precio_NintendoEshop(String Name) throws IOException {
         String result = null;
         try {
 
-            String steamSearchString = link.replaceAll(" ", "+");
+            String steamSearchString = Name.replaceAll(" ", "+");
             System.out.println(steamSearchString);
 
             String steamURL = String.format("https://www.nintendo.com/search/#category=all&page=1&query=%s", steamSearchString);
@@ -134,12 +132,13 @@ public class Scrapping implements Callable <String>
 
             WebDriver driver = null;
             selenium = new Base(driver);
-            selenium.chromeDriverConnection();
+            selenium.fireFoxDriverConnection();
             selenium.visit(steamURL);
             new WebDriverWait(selenium.getDriver(), 20).until(ExpectedConditions.
                     elementToBeClickable(By.xpath("//*[@id=\"main\"]/div/div/global-search/div/div[1]/tile-slider/game-tile[1]/h3")));
             selenium.clickXPath("//*[@id=\"main\"]/div/div/global-search/div/div[1]/tile-slider/game-tile[1]/h3");
 
+            Thread.sleep(1000);
             String url = selenium.getDriver().getCurrentUrl();
             selenium.getDriver().close();
 
@@ -148,7 +147,7 @@ public class Scrapping implements Callable <String>
             Elements steamDiscountPrice = steamDoc.select("#purchase-options > div.price > span.h2.msrp");
             result = steamDiscountPrice.text();
 
-        } catch (IOException e) {
+        } catch (IOException | InterruptedException e) {
             e.printStackTrace();
         } catch (IndexOutOfBoundsException e) {
             System.out.println("Your search returned 0 results");
@@ -156,11 +155,11 @@ public class Scrapping implements Callable <String>
         return result;
     }
 
-    private String precio_Steam(String link) throws IOException {
+    public String precio_Steam(String Name) throws IOException {
         String price = null;
         try {
 
-            String steamSearchString = link.replaceAll(" ", "+");
+            String steamSearchString = Name.replaceAll(" ", "+");
             System.out.println(steamSearchString);
 
             String steamURL = String.format("https://store.steampowered.com/search/?term=%s", steamSearchString);
@@ -181,18 +180,18 @@ public class Scrapping implements Callable <String>
         return price;
     }
 
-    private String score_Metacritic(String link) throws IOException {
+    public String score_Metacritic(String Name) throws IOException {
         String result = null;
         try {
 
-            String SearchString = link.replaceAll(" ", "%20");
+            String SearchString = Name.replaceAll(" ", "%20");
 
             String metacriticURL = String.format("https://www.metacritic.com/search/all/%s/results", SearchString);
             System.out.println(metacriticURL);
 
             WebDriver driver = null;
             selenium = new Base(driver);
-            selenium.chromeDriverConnection();
+            selenium.fireFoxDriverConnection();
             selenium.visit(metacriticURL);
 
             new WebDriverWait(selenium.getDriver(), 20).until(ExpectedConditions.
@@ -217,18 +216,18 @@ public class Scrapping implements Callable <String>
         return result;
     }
 
-    private String price_MicrosoftXbox(String link) throws IOException {
+    public String price_MicrosoftXbox(String Name) throws IOException {
         String result = null;
         try {
 
-            String SearchString = link.replaceAll(" ", "+");
+            String SearchString = Name.replaceAll(" ", "+");
 
             String xboxURL = String.format("https://www.xbox.com/en-US/Search?q=%s", SearchString);
             System.out.println(xboxURL);
 
             WebDriver driver = null;
             selenium = new Base(driver);
-            selenium.chromeDriverConnection();
+            selenium.fireFoxDriverConnection();
             selenium.visit(xboxURL);
 
             new WebDriverWait(selenium.getDriver(), 20).until(ExpectedConditions.
@@ -262,11 +261,11 @@ public class Scrapping implements Callable <String>
         return result;
     }
 
-    private String price_Amazon(String link) throws IOException {
+    public String price_Amazon(String Name) throws IOException {
         String result = null;
         try {
 
-            String SearchString = link.replaceAll(" ", "+");
+            String SearchString = Name.replaceAll(" ", "+");
             System.out.println(SearchString);
 
             String amazonURL = "https://www.amazon.com/s?k="+SearchString+"&__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91";
@@ -274,7 +273,7 @@ public class Scrapping implements Callable <String>
 
             WebDriver driver = null;
             selenium = new Base(driver);
-            selenium.chromeDriverConnection();
+            selenium.fireFoxDriverConnection();
             selenium.visit(amazonURL);
             new WebDriverWait(selenium.getDriver(), 20).until(ExpectedConditions.
                     elementToBeClickable(By.xpath("//*[@id=\"search\"]/div[1]/div/div[1]/div/span[3]/div[2]/div[1]/div/span/div/div/div[2]/div[2]/div/div[1]/h2/a/span")));
@@ -300,7 +299,6 @@ public class Scrapping implements Callable <String>
         }
         return result;
     }
-
     public String timeToComplete(String name){
         String time = null;
         try {
@@ -308,7 +306,7 @@ public class Scrapping implements Callable <String>
             System.out.println(url);
             WebDriver driver = null;
             selenium = new Base(driver);
-            driver = selenium.chromeDriverConnection();
+            driver = selenium.fireFoxDriverConnection();
             selenium.visit(url);
             new WebDriverWait(selenium.getDriver(), 20).until(ExpectedConditions.
                     elementToBeClickable(By.xpath("//*[@id=\"global_search_box\"]")));
@@ -322,6 +320,8 @@ public class Scrapping implements Callable <String>
             WebElement firstItem = driver.findElement(By.xpath("//*[@id=\"global_search_content\"]/ul/li[1]/div[2]/h3/a"));
             firstItem.click();
             Thread.sleep(2000);
+            new WebDriverWait(selenium.getDriver(), 20).until(ExpectedConditions.
+                    elementToBeClickable(By.xpath("//*[@id=\"global_site\"]/div[2]/div/div[2]/div[1]/ul/li[4]/div")));
             WebElement timeElement = driver.findElement(By.xpath("//*[@id=\"global_site\"]/div[2]/div/div[2]/div[1]/ul/li[4]/div"));
             time = timeElement.getText();
             driver.close();
@@ -338,7 +338,20 @@ public class Scrapping implements Callable <String>
         return time;
     }
 
+    public String getInfoGame(String jsonGame) throws ParseException {
+        String jsonResult = null;
+
+        JSONParser parser = new JSONParser();
+        JSONObject json = (JSONObject) parser.parse(jsonGame);
+        String Name = (String) json.get(0);
+
+        return Name;
+    }
+
+
+
     public static void main(String[] args) throws IOException, ExecutionException, InterruptedException {
+        /*
         Scrapping t1 = new Scrapping("Dead Cells", 0);
         Scrapping t2 = new Scrapping("Dead Cells", 1);
         Scrapping t3 = new Scrapping("Dead Cells", 2);
@@ -360,7 +373,6 @@ public class Scrapping implements Callable <String>
         System.out.println("psStore:" + future2.get());
         System.out.println("Time: " + future6.get());
 
-        //System.out.println("Time: " + future6);
 /*
         //i.score_Metacritic("Dead Cells");
         //i.price_MicrosoftXbox("Dead Cells");
@@ -368,6 +380,10 @@ public class Scrapping implements Callable <String>
         //i.price_Amazon("ghost of tsushima");
         //i.score_Metacritic("ghost of tsushima");
         */
+
+        //Scrapping t1 = new Scrapping("Dead Cells", 0);
+
+        Game game = new Game("Dead Cells",true,true,false,false,true);
 
     }
 }

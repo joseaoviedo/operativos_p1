@@ -16,7 +16,7 @@ public class Base {
         this.driver = driver;
     }
 
-    public WebDriver chromeDriverConnection(){
+    public WebDriver fireFoxDriverConnection(){
         System.setProperty("webdriver.gecko.driver","src/main/resources/Driver/geckodriver.exe");
         driver = new FirefoxDriver();
         return driver;

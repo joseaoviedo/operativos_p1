@@ -30,7 +30,7 @@ public class JsoupQueries {
 
             WebDriver driver = null;
             selenium = new Base(driver);
-            selenium.chromeDriverConnection();
+            selenium.fireFoxDriverConnection();
             selenium.visit(steamURL);
 
             selenium.clickXPath("//*[@id=\"main\"]/section/div/ul/li[1]/div/a/div/div[1]/span[2]/img[2]");
@@ -73,7 +73,7 @@ public class JsoupQueries {
 
             WebDriver driver = null;
             selenium = new Base(driver);
-            selenium.chromeDriverConnection();
+            selenium.fireFoxDriverConnection();
             selenium.visit(steamURL);
 
             selenium.clickXPath("//*[@id=\"main\"]/div/div/global-search/div/div[1]/tile-slider/game-tile[1]/h3");
