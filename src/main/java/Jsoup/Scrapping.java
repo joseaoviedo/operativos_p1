@@ -1,29 +1,89 @@
 package Jsoup;
 
 import java.io.IOException;
-import java.util.concurrent.TimeUnit;
+import java.util.concurrent.*;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import Selenium.Base;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
 
 /**
  * Indeed Job Search Hello World Program
  *
  */
-public class Scrapping
+public class Scrapping implements Callable <String>
 {
+    private String Name;
+    private int code;
     Base selenium;
+
+    private final ExecutorService fixedThreadPool = Executors.newFixedThreadPool(Runtime.getRuntime().availableProcessors());
+
+    public Scrapping(String gameName, int storeCode){
+        Name = gameName;
+        code = storeCode;
+    }
+
+    public String call() throws IOException {
+
+        System.out.println("Thread: " + Name + "Web: " + code);
+        String value = null;
+
+        if(code ==  0){
+            try {
+                value = (score_Metacritic(Name));
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }else if(code == 1){
+            try{
+                value = (precio_NintendoEshop(Name));
+
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }else if(code ==2){
+            try{
+                value = (precio_playStation(Name));
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+        }else if(code == 3){
+            try{
+                value = (price_Amazon(Name));
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }else if(code == 4 ){
+            try{
+                value = (price_MicrosoftXbox(Name));
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }else if(code == 5){
+            try{
+                value = (precio_Steam(Name));
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }else if(code == 6){
+            try {
+                value =  timeToComplete(Name);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+        return value;
+    }
+
     private String precio_playStation(String Name) throws IOException {
 
         try {
@@ -38,16 +98,14 @@ public class Scrapping
             selenium = new Base(driver);
             selenium.chromeDriverConnection();
             selenium.visit(steamURL);
+            new WebDriverWait(selenium.getDriver(), 20).until(ExpectedConditions.
+                    elementToBeClickable(By.xpath("//*[@id=\"main\"]/section/div/ul/li[1]/div/a/div/div[1]/span[2]/img[2]")));
 
             selenium.clickXPath("//*[@id=\"main\"]/section/div/ul/li[1]/div/a/div/div[1]/span[2]/img[2]");
-            Thread.sleep(2000);
-
             String url = selenium.getDriver().getCurrentUrl();
             selenium.getDriver().close();
 
-
             Document steamDoc = Jsoup.connect(url).timeout(6000).get();
-
 
             Element gameName = steamDoc.selectFirst("h1.psw-m-b-xs.psw-h1.psw-l-line-break-word");
             Element gamePrice = steamDoc.selectFirst("#main > div.psw-grid-container.pdp-content > div.top-content-full > div > div.psw-cell.psw-tablet-l-6.psw-tablet-p-12.pdp-content-right > div > div.cta-container-mobile.psw-cell.psw-mobile-p-12.psw-tablet-p-6.psw-p-t-xl > div > div > div > label > div > span > span > span > span");
@@ -59,8 +117,6 @@ public class Scrapping
             e.printStackTrace();
         } catch (IndexOutOfBoundsException e) {
             System.out.println("Your search returned 0 results");
-        } catch (InterruptedException e) {
-            e.printStackTrace();
         }
         return ("price");
     }
@@ -81,9 +137,9 @@ public class Scrapping
             selenium = new Base(driver);
             selenium.chromeDriverConnection();
             selenium.visit(steamURL);
-
+            new WebDriverWait(selenium.getDriver(), 20).until(ExpectedConditions.
+                    elementToBeClickable(By.xpath("//*[@id=\"main\"]/div/div/global-search/div/div[1]/tile-slider/game-tile[1]/h3")));
             selenium.clickXPath("//*[@id=\"main\"]/div/div/global-search/div/div[1]/tile-slider/game-tile[1]/h3");
-            Thread.sleep(2000);
 
             String url = selenium.getDriver().getCurrentUrl();
             selenium.getDriver().close();
@@ -99,8 +155,6 @@ public class Scrapping
             e.printStackTrace();
         } catch (IndexOutOfBoundsException e) {
             System.out.println("Your search returned 0 results");
-        } catch (InterruptedException e) {
-            e.printStackTrace();
         }
         return ("price");
     }
@@ -144,8 +198,10 @@ public class Scrapping
             selenium.chromeDriverConnection();
             selenium.visit(metacriticURL);
 
+            new WebDriverWait(selenium.getDriver(), 20).until(ExpectedConditions.
+                    elementToBeClickable(By.xpath("//*[@id=\"main_content\"]/div/div[3]/div/ul/li[1]/div/div[2]/div/h3/a")));
+
             selenium.clickXPath("//*[@id=\"main_content\"]/div/div[3]/div/ul/li[1]/div/div[2]/div/h3/a");
-            Thread.sleep(2000);
 
             String url = selenium.getDriver().getCurrentUrl();
             selenium.getDriver().close();
@@ -161,8 +217,6 @@ public class Scrapping
             e.printStackTrace();
         } catch (IndexOutOfBoundsException e) {
             System.out.println("Your search returned 0 results");
-        } catch (InterruptedException e) {
-            e.printStackTrace();
         }
         return ("score");
     }
@@ -173,7 +227,7 @@ public class Scrapping
 
             String SearchString = link.replaceAll(" ", "+");
 
-            String xboxURL = String.format("https://www.xbox.com/es-mx/Search?q=%s", SearchString);
+            String xboxURL = String.format("https://www.xbox.com/en-US/Search?q=%s", SearchString);
             System.out.println(xboxURL);
 
             WebDriver driver = null;
@@ -181,10 +235,16 @@ public class Scrapping
             selenium.chromeDriverConnection();
             selenium.visit(xboxURL);
 
+            new WebDriverWait(selenium.getDriver(), 20).until(ExpectedConditions.
+                    elementToBeClickable(By.xpath("//*[@id=\"nav-gamesxboxone\"]/div/div/section[1]/a/div[1]/picture/img")));
+
             selenium.clickXPath("//*[@id=\"nav-gamesxboxone\"]/div/div/section[1]/a/div[1]/picture/img");
             //selenium.clickXPath("//*[@id=\"R1MarketRedirect-submit\"]");   //Redirige a la pagina en CR
+
+            new WebDriverWait(selenium.getDriver(), 20).until(ExpectedConditions.
+                    elementToBeClickable(By.xpath("//*[@id=\"R1MarketRedirect-1\"]/button")));
+
             selenium.clickXPath("//*[@id=\"R1MarketRedirect-1\"]/button");
-            Thread.sleep(2000);
 
             String url = selenium.getDriver().getCurrentUrl();
             selenium.getDriver().close();
@@ -204,8 +264,6 @@ public class Scrapping
             e.printStackTrace();
         } catch (IndexOutOfBoundsException e) {
             System.out.println("Your search returned 0 results");
-        } catch (InterruptedException e) {
-            e.printStackTrace();
         }
         return ("Price");
     }
@@ -224,11 +282,11 @@ public class Scrapping
             selenium = new Base(driver);
             selenium.chromeDriverConnection();
             selenium.visit(amazonURL);
+            new WebDriverWait(selenium.getDriver(), 20).until(ExpectedConditions.
+                    elementToBeClickable(By.xpath("//*[@id=\"search\"]/div[1]/div/div[1]/div/span[3]/div[2]/div[1]/div/span/div/div/div[2]/div[2]/div/div[1]/h2/a/span")));
 
             selenium.clickXPath("//*[@id=\"search\"]/div[1]/div/div[1]/div/span[3]/div[2]/div[1]/div/span/div/div/div[2]/div[2]/div/div[1]/h2/a/span");
             //selenium.clickXPath("//*[@id=\"ourprice_shippingmessage\"]/span[2]/a/span");
-
-            Thread.sleep(2000);
 
             String url = selenium.getDriver().getCurrentUrl();
             selenium.getDriver().close();
@@ -247,8 +305,6 @@ public class Scrapping
             e.printStackTrace();
         } catch (IndexOutOfBoundsException e) {
             System.out.println("Your search returned 0 results");
-        } catch (InterruptedException e) {
-            e.printStackTrace();
         }
         return ("Precio");
     }
@@ -262,9 +318,15 @@ public class Scrapping
             selenium = new Base(driver);
             driver = selenium.chromeDriverConnection();
             selenium.visit(url);
+            new WebDriverWait(selenium.getDriver(), 20).until(ExpectedConditions.
+                    elementToBeClickable(By.xpath("//*[@id=\"global_search_box\"]")));
+
             WebElement input = driver.findElement(By.xpath("//*[@id=\"global_search_box\"]"));
             input.sendKeys(name);
             Thread.sleep(2000);
+            new WebDriverWait(selenium.getDriver(), 20).until(ExpectedConditions.
+                    elementToBeClickable(By.xpath("//*[@id=\"global_search_content\"]/ul/li[1]/div[2]/h3/a")));
+
             WebElement firstItem = driver.findElement(By.xpath("//*[@id=\"global_search_content\"]/ul/li[1]/div[2]/h3/a"));
             firstItem.click();
             Thread.sleep(2000);
@@ -284,13 +346,36 @@ public class Scrapping
         return time;
     }
 
-    public static void main(String[] args) throws IOException {
-        Scrapping i = new Scrapping();
+    public static void main(String[] args) throws IOException, ExecutionException, InterruptedException {
+        Scrapping t1 = new Scrapping("Dead Cells", 0);
+        Scrapping t2 = new Scrapping("Dead Cells", 1);
+        Scrapping t3 = new Scrapping("Dead Cells", 2);
+        Scrapping t4 = new Scrapping("Dead Cells", 6);
+
+        //Scrapping i = new Scrapping("Mario", 0);
+        //System.out.println(i.precio_NintendoEshop("Mario"));
+
+        Future<String> future0 = t1.fixedThreadPool.submit(t1);
+        Future<String> future1 = t2.fixedThreadPool.submit(t2);
+        Future<String> future2 = t3.fixedThreadPool.submit(t3);
+        Future<String> future6 = t4.fixedThreadPool.submit(t4);
+
+
+
+        System.out.println("Dead Cells: ");
+        System.out.println("Score:" + future0.get());
+        System.out.println("EShop: " + future1.get());
+        System.out.println("psStore:" + future2.get());
+        System.out.println("Time: " + future6.get());
+
+        //System.out.println("Time: " + future6);
+/*
         //i.score_Metacritic("Dead Cells");
         //i.price_MicrosoftXbox("Dead Cells");
         //i.price_Amazon("Dead Cells");
         //i.price_Amazon("ghost of tsushima");
         //i.score_Metacritic("ghost of tsushima");
-        System.out.println(i.timeToComplete("Dead Cells"));
+        */
+
     }
 }
