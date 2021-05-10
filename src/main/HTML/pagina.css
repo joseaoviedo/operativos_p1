@@ -1,0 +1,33 @@
+body{
+    background-color: white;
+}
+
+.Title{
+    text-indent: 30px;
+    color: midnightblue;
+    font: bold 250% monospace;
+    }
+
+.carousel{
+    width: 35%;
+    }
+
+.Descripcion{
+    text-indent: 50px;
+    float:left;
+    color: black;
+    font: bold 90% monospace;
+}
+.b {
+  border: 1px solid blue;
+  background-color: lightblue;
+  padding: 15px;
+  float: left;
+
+    text-align:center;
+
+}
+
+.lista{
+    float:right;
+}
