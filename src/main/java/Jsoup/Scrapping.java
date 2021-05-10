@@ -85,7 +85,7 @@ public class Scrapping implements Callable <String>
     }
 
     private String precio_playStation(String Name) throws IOException {
-
+        String result = null;
         try {
 
             String steamSearchString = Name.replaceAll(" ", "%20");
@@ -110,21 +110,20 @@ public class Scrapping implements Callable <String>
             Element gameName = steamDoc.selectFirst("h1.psw-m-b-xs.psw-h1.psw-l-line-break-word");
             Element gamePrice = steamDoc.selectFirst("#main > div.psw-grid-container.pdp-content > div.top-content-full > div > div.psw-cell.psw-tablet-l-6.psw-tablet-p-12.pdp-content-right > div > div.cta-container-mobile.psw-cell.psw-mobile-p-12.psw-tablet-p-6.psw-p-t-xl > div > div > div > label > div > span > span > span > span");
 
-            System.out.println(gameName.text());
-            System.out.println(gamePrice.text());
+            result = gamePrice.text();
 
         } catch (IOException e) {
             e.printStackTrace();
         } catch (IndexOutOfBoundsException e) {
             System.out.println("Your search returned 0 results");
         }
-        return ("price");
+        return result;
     }
 
 
 
     private String precio_NintendoEshop(String link) throws IOException {
-
+        String result = null;
         try {
 
             String steamSearchString = link.replaceAll(" ", "+");
@@ -147,19 +146,18 @@ public class Scrapping implements Callable <String>
             Document steamDoc = Jsoup.connect(url).timeout(6000).get();
             Element steamGameTitle = steamDoc.selectFirst("#details > div > div > div.basic-info > h1");
             Elements steamDiscountPrice = steamDoc.select("#purchase-options > div.price > span.h2.msrp");
-
-            System.out.println(steamGameTitle.text());
-            System.out.println(steamDiscountPrice.text());
+            result = steamDiscountPrice.text();
 
         } catch (IOException e) {
             e.printStackTrace();
         } catch (IndexOutOfBoundsException e) {
             System.out.println("Your search returned 0 results");
         }
-        return ("price");
+        return result;
     }
 
     private String precio_Steam(String link) throws IOException {
+        String price = null;
         try {
 
             String steamSearchString = link.replaceAll(" ", "+");
@@ -173,19 +171,18 @@ public class Scrapping implements Callable <String>
             Element steamGameTitle = steamDoc.selectFirst("span.title");
             Element steamDiscountPrice = steamDoc.selectFirst("div.col.search_price.responsive_secondrow");
 
-            System.out.println(steamGameTitle.text());
-            System.out.println(steamDiscountPrice.text());
+            price = steamDiscountPrice.text();
 
         } catch (IOException e) {
             e.printStackTrace();
         } catch (IndexOutOfBoundsException e) {
             System.out.println("Your search returned 0 results");
         }
-        return ("price");
+        return price;
     }
 
     private String score_Metacritic(String link) throws IOException {
-
+        String result = null;
         try {
 
             String SearchString = link.replaceAll(" ", "%20");
@@ -209,20 +206,19 @@ public class Scrapping implements Callable <String>
             Document metacriticDoc = Jsoup.connect(url).timeout(6000).get();
             Element GameTitle = metacriticDoc.selectFirst("#main > div > div:nth-child(1) > div.left > div.content_head.product_content_head.game_content_head > div.product_title > a > h1");
             Elements Score = metacriticDoc.select("#main > div > div:nth-child(1) > div.left > div.with_trailer > div > div > div.summary_wrap > div.section.product_scores > div.details.main_details > div > div > a > div > span");
+            result = Score.text();
 
-            System.out.println(GameTitle.text());
-            System.out.println("Score:"+ Score.text());
 
         } catch (IOException e) {
             e.printStackTrace();
         } catch (IndexOutOfBoundsException e) {
             System.out.println("Your search returned 0 results");
         }
-        return ("score");
+        return result;
     }
 
     private String price_MicrosoftXbox(String link) throws IOException {
-
+        String result = null;
         try {
 
             String SearchString = link.replaceAll(" ", "+");
@@ -255,21 +251,19 @@ public class Scrapping implements Callable <String>
             Elements price = doc.select("#ProductPrice_productPrice_PriceContainer-1");
 
             //Elements price = doc.select("#ProductPrice_productPrice_PriceContainer-2 > span:nth-child(1)");
+            result = price.text();
 
-            System.out.println(GameTitle.text());
-            System.out.println(price);
-            System.out.println("Price:"+ price.text());
 
         } catch (IOException e) {
             e.printStackTrace();
         } catch (IndexOutOfBoundsException e) {
             System.out.println("Your search returned 0 results");
         }
-        return ("Price");
+        return result;
     }
 
     private String price_Amazon(String link) throws IOException {
-
+        String result = null;
         try {
 
             String SearchString = link.replaceAll(" ", "+");
@@ -296,17 +290,15 @@ public class Scrapping implements Callable <String>
 
             //Elements Price = amazonDoc.select("#a-popover-content-3 > table > tbody > tr:nth-child(5) > td.a-span2.a-text-right > span");
             Elements Price = amazonDoc.select("#priceblock_ourprice");
+            result = Price.text();
 
-
-            System.out.println(GameTitle);
-            System.out.println("Price:"+ Price.text());
 
         } catch (IOException e) {
             e.printStackTrace();
         } catch (IndexOutOfBoundsException e) {
             System.out.println("Your search returned 0 results");
         }
-        return ("Precio");
+        return result;
     }
 
     public String timeToComplete(String name){
