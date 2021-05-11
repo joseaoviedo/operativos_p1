@@ -1,6 +1,9 @@
+
 <!DOCTYPE html>
 
-<head xmlns="http://www.w3.org/1999/html">
+<head xmlns="http://www.w3.org/1999/html" xmlns:th="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.w3.org/1999/xhtml" xmlns:th="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.w3.org/1999/xhtml">
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -8,6 +11,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
 
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
 </head>
 <body>
 <div>
@@ -25,6 +29,8 @@
 
     </div>
 <script>
+    /* Script de Notificaciones
+    * -Arreglar la funcion para saber si los datos se actualizaron*/
     if(Notification.permission!=="granted") {
         Notification.requestPermission();
     }
@@ -41,7 +47,7 @@
 
     // Redireccionamos a un determinado Destino o URL al hacer click en la Notificación
     notificacion.onclick = function() {
-    window.open("https://google.com/"); //AREGLAR
+        //Agregar actualización de datos
     };
     }
 
@@ -52,7 +58,7 @@
     return ("Notification" in window);
     }
 
-    // Mostramos el Mensaje de la Notificación
+    // Es solo para mostrar el Mensaje de la Notificación
     function logg(mensaje) {
     notificador.innerHTML += "<p>"+mensaje+"</p>";
     }
@@ -65,13 +71,32 @@
 
 </div>
 
-<!-- Colocar Juegos -->
+<!-- Colocar Juegos (Esta seccion aun no muestra la lista de juegos) pero se supone que
+recorre la lista de juegos y la va colocando en forma de cardview
 
+<div th:each="data: ${Data}">
+    <div class="row">
+        <div class="column">
+            <div class="card">
+                <h3>th:text="${data.getGame()}"</h3>
+                <<img src="https://i.blogs.es/f0de2f/dead-cells-dlc/original.jpeg" width="200"
+                 height="200">
+                <p>th:text="${data.getqueryDate()}"</p>
+                <p>th:text="${data.getCalificacion()}"</p>
+                <p>th:text="${data.getaverageTime()}"</p>
+            </div>
+        </div>
+</div> -->
 
+<!-- Estos son solo ejemplos, como la pagina no esta conectada con nada de Java
+     Solo quería ver como se iba a ver -->
 <div class="row">
     <div class="column">
         <div class="card">
             <h3>Juego 1</h3>
+            <p>Some text</p>
+            <img src="https://i.blogs.es/f0de2f/dead-cells-dlc/original.jpeg" width="250"
+                 height="250">
             <p>Some text</p>
         </div>
     </div>
@@ -79,6 +104,8 @@
     <div class="column">
         <div class="card">
             <h3>Juego 2</h3>
+            <img src="https://i.blogs.es/f0de2f/dead-cells-dlc/original.jpeg" width="250"
+                 height="250">
             <p>Some text</p>
         </div>
     </div>
@@ -86,9 +113,12 @@
     <div class="column">
         <div class="card">
             <h3>Game 3</h3>
+            <img src="https://i.blogs.es/f0de2f/dead-cells-dlc/original.jpeg" width="250"
+                 height="250">
             <p>Some text</p>
         </div>
     </div>
+
 
 </div>
 
