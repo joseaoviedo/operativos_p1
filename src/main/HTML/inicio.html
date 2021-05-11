@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<head>
+<head xmlns="http://www.w3.org/1999/html">
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -15,13 +15,82 @@
 
 </div>
 <hr/>
+<div class="Notificacion">
+
+    <div class="col-md-12">
+
+        <div style="text-align:center; color: darkslateblue;">
+            <button type="button" class="col-md-12" id="btn_notificar" role="button">Notificaciones</button>
+        </div>
+
+    </div>
+<script>
+    if(Notification.permission!=="granted") {
+        Notification.requestPermission();
+    }
+    document.getElementById("btn_notificar").addEventListener("click", onNotificationButtonClick);
+    function onNotificationButtonClick() {
+    if (!isNotificationSupported()) {
+    logg("Tu navegador no soporta Notificaciones");
+    return;
+    }
+
+    var notificacion = new Notification("Nueva Actualización", {
+    body: 'Datos de Juegos Actualizados'
+    });
+
+    // Redireccionamos a un determinado Destino o URL al hacer click en la Notificación
+    notificacion.onclick = function() {
+    window.open("https://google.com/"); //AREGLAR
+    };
+    }
+
+    function requestPermissions() {
+
+    }
+    function isNotificationSupported() {
+    return ("Notification" in window);
+    }
+
+    // Mostramos el Mensaje de la Notificación
+    function logg(mensaje) {
+    notificador.innerHTML += "<p>"+mensaje+"</p>";
+    }
+    </script>
+
+</div>
 
 <div>
-    <h3 class="Descripcion">Lista de Juegos</h3>
+    <p>Lista de Juegos <br/></p>
 
 </div>
 
 <!-- Colocar Juegos -->
+
+
+<div class="row">
+    <div class="column">
+        <div class="card">
+            <h3>Juego 1</h3>
+            <p>Some text</p>
+        </div>
+    </div>
+
+    <div class="column">
+        <div class="card">
+            <h3>Juego 2</h3>
+            <p>Some text</p>
+        </div>
+    </div>
+
+    <div class="column">
+        <div class="card">
+            <h3>Game 3</h3>
+            <p>Some text</p>
+        </div>
+    </div>
+
+</div>
 
 
 </div>
