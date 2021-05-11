@@ -108,7 +108,7 @@ public class GetData {
 
     public static void main(String[] args) throws ParseException, ExecutionException, InterruptedException {
 
-        Game game = new Game("Dead Cells",false,false,true,false,false);
+        Game game = new Game("Dead Cells",true,true,true,true,true);
 
         String json = new Gson().toJson(game);
 
