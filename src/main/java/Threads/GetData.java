@@ -47,23 +47,62 @@ public class GetData {
         if(s.isSteam())
             steam = fixedThreadPool.submit(new Thread(name, 5));
 
+        String meta = metaCritic.get();
+        String how = howLongTo.get();
+        String ES;
 
-        System.out.println("Name: "+ name);
-        System.out.println("howLongTo: " + howLongTo.get());
-        System.out.println("Score: " + metaCritic.get());
-        assert eShop != null;
-        System.out.println("EShop: " + eShop.get());
-        assert psStore != null;
-        System.out.println("psStore: " + psStore.get());
-        assert amazon != null;
-        System.out.println("amazon: " + amazon.get());
-        assert xboxStore != null;
-        System.out.println("xboxStore: " + xboxStore.get());
-        assert steam != null;
-        System.out.println("steam: " + steam.get());
+        if(eShop != null){
+            ES = eShop.get();
 
+        }else {
+            assert false;
+            ES = "No disponible";
+        }
+        String Ps;
+        if(psStore != null){
+            Ps = psStore.get();
+        }else{
+            assert false;
+            Ps = "No disponible";
+        }
+        String Ama;
+        if(amazon != null){
+            Ama = amazon.get();
+        }else{
+            assert false;
+            Ama = "No disponible";
+        }
+        String XS;
+        if(xboxStore != null){
+            XS = xboxStore.get();
+        }else{
+            assert false;
+            XS = "No disponible";
+        }
+        String S;
+        if(steam != null){
+            S = steam.get();
+        }else{
+            assert false;
+            S = "No disponible";
+        }
+        String result = createJson(name,ES,Ps,XS,S,Ama,how,meta);
         fixedThreadPool.shutdown();
-        return null;
+        return result;
+    }
+
+    public String createJson(String name,String priceEShop, String pricePSStore,String priceXboxStore,
+                             String priceSteam, String priceAmazon, String averageTime, String calificacion){
+        JSONObject json = new JSONObject();
+        json.put("game", name);
+        json.put("priceEShop", priceEShop);
+        json.put("pricePSStore", pricePSStore);
+        json.put("priceXboxStore", priceXboxStore);
+        json.put("priceAmazon", priceAmazon);
+        json.put("averageTime", averageTime);
+        json.put("calificacion", calificacion);
+
+        return json.toString();
     }
 
     public static void main(String[] args) throws ParseException, ExecutionException, InterruptedException {
