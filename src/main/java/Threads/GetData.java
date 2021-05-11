@@ -98,6 +98,7 @@ public class GetData {
         json.put("priceEShop", priceEShop);
         json.put("pricePSStore", pricePSStore);
         json.put("priceXboxStore", priceXboxStore);
+        json.put("priceSteam", priceSteam);
         json.put("priceAmazon", priceAmazon);
         json.put("averageTime", averageTime);
         json.put("calificacion", calificacion);
