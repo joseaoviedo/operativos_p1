@@ -320,9 +320,7 @@ public class Scrapping
             WebElement firstItem = driver.findElement(By.xpath("//*[@id=\"global_search_content\"]/ul/li[1]/div[2]/h3/a"));
             firstItem.click();
             Thread.sleep(2000);
-            new WebDriverWait(selenium.getDriver(), 20).until(ExpectedConditions.
-                    elementToBeClickable(By.xpath("//*[@id=\"global_site\"]/div[2]/div/div[2]/div[1]/ul/li[4]/div")));
-            WebElement timeElement = driver.findElement(By.xpath("//*[@id=\"global_site\"]/div[2]/div/div[2]/div[1]/ul/li[4]/div"));
+            WebElement timeElement = driver.findElement(By.xpath("/html/body/div[1]/div/div[3]/div/div[2]/div[1]/ul/li[4]/div"));
             time = timeElement.getText();
             driver.close();
 
