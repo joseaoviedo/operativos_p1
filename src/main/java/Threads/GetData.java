@@ -24,7 +24,7 @@ public class GetData {
         String name = s.getTitle();
 
         Future<String> metaCritic = fixedThreadPool.submit(new Thread(name,0));
-        Future<String> howLongTo = fixedThreadPool.submit(new Thread(name,6));
+        //Future<String> howLongTo = fixedThreadPool.submit(new Thread(name,6));
 
         Future<String> eShop = null;
         Future<String> psStore = null;
@@ -48,7 +48,7 @@ public class GetData {
             steam = fixedThreadPool.submit(new Thread(name, 5));
 
         String meta = metaCritic.get();
-        String how = howLongTo.get();
+        //String how = howLongTo.get();
         String ES;
 
         if(eShop != null){
@@ -86,7 +86,7 @@ public class GetData {
             assert false;
             S = "No disponible";
         }
-        String result = createJson(name,ES,Ps,XS,S,Ama,how,meta);
+        String result = createJson(name,ES,Ps,XS,S,Ama,"how",meta);
         fixedThreadPool.shutdown();
         return result;
     }
@@ -108,7 +108,7 @@ public class GetData {
 
     public static void main(String[] args) throws ParseException, ExecutionException, InterruptedException {
 
-        Game game = new Game("Dead Cells",true,true,true,true,true);
+        Game game = new Game("Dead Cells",false,false,true,false,false);
 
         String json = new Gson().toJson(game);
 

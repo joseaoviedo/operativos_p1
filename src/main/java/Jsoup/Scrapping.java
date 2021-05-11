@@ -3,11 +3,6 @@ package Jsoup;
 import java.io.IOException;
 import java.util.concurrent.*;
 
-import Model.Game;
-import org.json.JSONArray;
-import org.json.simple.JSONObject;
-import org.json.simple.parser.JSONParser;
-import org.json.simple.parser.ParseException;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
@@ -172,6 +167,8 @@ public class Scrapping
 
             price = steamDiscountPrice.text();
 
+            price = price.replaceAll("₡", "col ");
+
         } catch (IOException e) {
             e.printStackTrace();
         } catch (IndexOutOfBoundsException e) {
@@ -219,39 +216,47 @@ public class Scrapping
     public String price_MicrosoftXbox(String Name) throws IOException {
         String result = null;
         try {
-
+            /*
             String SearchString = Name.replaceAll(" ", "+");
 
             String xboxURL = String.format("https://www.xbox.com/en-US/Search?q=%s", SearchString);
             System.out.println(xboxURL);
-
+            */
             WebDriver driver = null;
             selenium = new Base(driver);
             selenium.fireFoxDriverConnection();
-            selenium.visit(xboxURL);
+            selenium.visit("https://www.xbox.com/es-cr/");
 
             new WebDriverWait(selenium.getDriver(), 20).until(ExpectedConditions.
-                    elementToBeClickable(By.xpath("//*[@id=\"nav-gamesxboxone\"]/div/div/section[1]/a/div[1]/picture/img")));
+                    elementToBeClickable(By.xpath("//*[@id=\"search\"]")));
 
-            selenium.clickXPath("//*[@id=\"nav-gamesxboxone\"]/div/div/section[1]/a/div[1]/picture/img");
-            //selenium.clickXPath("//*[@id=\"R1MarketRedirect-submit\"]");   //Redirige a la pagina en CR
+            selenium.clickXPath("//*[@id=\"search\"]");
+
+            selenium.setText(Name, By.xpath("//*[@id=\"cli_shellHeaderSearchInput\"]"));
 
             new WebDriverWait(selenium.getDriver(), 20).until(ExpectedConditions.
-                    elementToBeClickable(By.xpath("//*[@id=\"R1MarketRedirect-1\"]/button")));
+                    elementToBeClickable(By.xpath("//*[@id=\"universal-header-search-auto-suggest-ul\"]/li[1]/a")));
 
-            selenium.clickXPath("//*[@id=\"R1MarketRedirect-1\"]/button");
+            selenium.clickXPath("//*[@id=\"universal-header-search-auto-suggest-ul\"]/li[1]/a");
+
+            new WebDriverWait(selenium.getDriver(), 20).until(ExpectedConditions.
+                    elementToBeClickable(By.xpath("//*[@id=\"buttonPanel_AppIdentityBuyButton\"]")));
 
             String url = selenium.getDriver().getCurrentUrl();
             selenium.getDriver().close();
+            System.out.println(url);
 
-            Document doc = Jsoup.connect(url).timeout(6000).get();
+            Document doc = Jsoup.connect(url).userAgent("Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:88.0) Gecko/20100101 Firefox/88.0").timeout(6000).get();
+
             Element GameTitle = doc.selectFirst("#DynamicHeading_productTitle");
 
-            Elements price = doc.select("#ProductPrice_productPrice_PriceContainer-1");
+            Elements price = doc.select("#productPrice");
 
             //Elements price = doc.select("#ProductPrice_productPrice_PriceContainer-2 > span:nth-child(1)");
             result = price.text();
-
+            String parts[] = result.split("\\+");
+            result = parts[0];
+            result = result.replaceAll("₡", "col ");
 
         } catch (IOException e) {
             e.printStackTrace();
@@ -262,6 +267,7 @@ public class Scrapping
     }
 
     public String price_Amazon(String Name) throws IOException {
+
         String result = null;
         try {
 
@@ -275,22 +281,20 @@ public class Scrapping
             selenium = new Base(driver);
             selenium.fireFoxDriverConnection();
             selenium.visit(amazonURL);
-            new WebDriverWait(selenium.getDriver(), 20).until(ExpectedConditions.
-                    elementToBeClickable(By.xpath("//*[@id=\"search\"]/div[1]/div/div[1]/div/span[3]/div[2]/div[1]/div/span/div/div/div[2]/div[2]/div/div[1]/h2/a/span")));
 
             selenium.clickXPath("//*[@id=\"search\"]/div[1]/div/div[1]/div/span[3]/div[2]/div[1]/div/span/div/div/div[2]/div[2]/div/div[1]/h2/a/span");
-            //selenium.clickXPath("//*[@id=\"ourprice_shippingmessage\"]/span[2]/a/span");
 
             String url = selenium.getDriver().getCurrentUrl();
             selenium.getDriver().close();
 
-            Document amazonDoc = Jsoup.connect(url).get();
+            System.out.println(url);
+
+            Document amazonDoc = Jsoup.connect(url).userAgent("Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:88.0) Gecko/20100101 Firefox/88.0").timeout(6000).get();
             Element GameTitle = amazonDoc.selectFirst("#productTitle");
+            Element Price = amazonDoc.selectFirst("#priceblock_ourprice");
 
-            //Elements Price = amazonDoc.select("#a-popover-content-3 > table > tbody > tr:nth-child(5) > td.a-span2.a-text-right > span");
-            Elements Price = amazonDoc.select("#priceblock_ourprice");
             result = Price.text();
-
+            result = result.replaceAll("\\$", "US ");
 
         } catch (IOException e) {
             e.printStackTrace();
@@ -298,7 +302,9 @@ public class Scrapping
             System.out.println("Your search returned 0 results");
         }
         return result;
+
     }
+
     public String timeToComplete(String name){
         String time = null;
         try {
@@ -336,17 +342,6 @@ public class Scrapping
         return time;
     }
 
-    public String getInfoGame(String jsonGame) throws ParseException {
-        String jsonResult = null;
-
-        JSONParser parser = new JSONParser();
-        JSONObject json = (JSONObject) parser.parse(jsonGame);
-        String Name = (String) json.get(0);
-
-        return Name;
-    }
-
-
 
     public static void main(String[] args) throws IOException, ExecutionException, InterruptedException {
         /*
@@ -378,10 +373,10 @@ public class Scrapping
         //i.price_Amazon("ghost of tsushima");
         //i.score_Metacritic("ghost of tsushima");
         */
+        Scrapping t1 = new Scrapping();
 
-        //Scrapping t1 = new Scrapping("Dead Cells", 0);
+        System.out.println(t1.price_Amazon("Halo 4"));
 
-        Game game = new Game("Dead Cells",true,true,false,false,true);
 
     }
 }
