@@ -275,20 +275,7 @@ public class Scrapping
             Thread.sleep(1000);
             WebElement timeElement = driver.findElement(By.xpath("//*[@id=\"global_site\"]/div[2]/div/div[2]/div[1]/ul/li[4]/div"));
             time = timeElement.getText();
-            /**
-            url = selenium.getDriver().getCurrentUrl();
-            selenium.getDriver().close();
 
-            Document amazonDoc = Jsoup.connect(url).get();
-            Element GameTitle = amazonDoc.selectFirst("#productTitle");
-
-            //Elements Price = amazonDoc.select("#a-popover-content-3 > table > tbody > tr:nth-child(5) > td.a-span2.a-text-right > span");
-            Elements Price = amazonDoc.select("#priceblock_ourprice");
-
-
-            System.out.println(GameTitle);
-            System.out.println("Price:"+ Price.text());
-             */
 
         } catch (IndexOutOfBoundsException | InterruptedException e) {
             System.out.println("Your search returned 0 results");
