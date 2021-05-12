@@ -1,8 +1,13 @@
 package Jsoup;
 
 import java.io.IOException;
+import java.math.BigDecimal;
 import java.util.concurrent.*;
 
+
+import com.posadskiy.currencyconverter.CurrencyConverter;
+import com.posadskiy.currencyconverter.config.ConfigBuilder;
+import com.posadskiy.currencyconverter.enums.Currency;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
@@ -23,62 +28,19 @@ public class Scrapping
 
     public Base selenium;
 
-    //private final ExecutorService fixedThreadPool = Executors.newFixedThreadPool(Runtime.getRuntime().availableProcessors());
+    private static String CURRENCY_CONVERTER_API_API_KEY = "1040dc060d777d74aa6f";
 
-/*
-    public String call() throws IOException {
 
-        System.out.println("Thread: " + Name + "Web: " + code);
-        String value = null;
+    // Init converter with your API key
+    CurrencyConverter converter = new CurrencyConverter(
+            new ConfigBuilder()
+                    .currencyConverterApiApiKey(CURRENCY_CONVERTER_API_API_KEY)
+                    .build()
+    );
 
-        if(code ==  0){
-            try {
-                value = (score_Metacritic(Name));
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }else if(code == 1){
-            try{
-                value = (precio_NintendoEshop(Name));
+    Double CRCToUSD = converter.rate("CRC", "USD");
 
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }else if(code ==2){
-            try{
-                value = (precio_playStation(Name));
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
 
-        }else if(code == 3){
-            try{
-                value = (price_Amazon(Name));
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }else if(code == 4 ){
-            try{
-                value = (price_MicrosoftXbox(Name));
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }else if(code == 5){
-            try{
-                value = (precio_Steam(Name));
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }else if(code == 6){
-            try {
-                value =  timeToComplete(Name);
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-        }
-        return value;
-    }
-*/
     public String precio_playStation(String Name) throws IOException {
         String result = null;
         try {
@@ -106,6 +68,10 @@ public class Scrapping
             Element gamePrice = steamDoc.selectFirst("#main > div.psw-grid-container.pdp-content > div.top-content-full > div > div.psw-cell.psw-tablet-l-6.psw-tablet-p-12.pdp-content-right > div > div.cta-container-mobile.psw-cell.psw-mobile-p-12.psw-tablet-p-6.psw-p-t-xl > div > div > div > label > div > span > span > span > span");
 
             result = gamePrice.text();
+
+            result = result.replaceAll("US","");
+
+            result = result.replaceAll("\\$","");
 
         } catch (IOException e) {
             e.printStackTrace();
@@ -142,6 +108,8 @@ public class Scrapping
             Elements steamDiscountPrice = steamDoc.select("#purchase-options > div.price > span.h2.msrp");
             result = steamDiscountPrice.text();
 
+            result = result = result.replaceAll("\\$", "");
+
         } catch (IOException | InterruptedException e) {
             e.printStackTrace();
         } catch (IndexOutOfBoundsException e) {
@@ -152,6 +120,7 @@ public class Scrapping
 
     public String precio_Steam(String Name) throws IOException {
         String price = null;
+        float i = -1;
         try {
 
             String steamSearchString = Name.replaceAll(" ", "+");
@@ -167,7 +136,17 @@ public class Scrapping
 
             price = steamDiscountPrice.text();
 
-            price = price.replaceAll("₡", "col ");
+            price = price.replaceAll("₡", "");
+            price = price.replaceAll("\\.", "");
+
+            System.out.println(price);
+
+            i = (float) (Float.parseFloat(price) * CRCToUSD);
+
+            i = Math.round(i);
+
+            price = String.valueOf(i);
+            price = price + "0";
 
         } catch (IOException e) {
             e.printStackTrace();
@@ -215,6 +194,7 @@ public class Scrapping
 
     public String price_MicrosoftXbox(String Name) throws IOException {
         String result = null;
+        float i = -1;
         try {
             /*
             String SearchString = Name.replaceAll(" ", "+");
@@ -256,7 +236,19 @@ public class Scrapping
             result = price.text();
             String parts[] = result.split("\\+");
             result = parts[0];
-            result = result.replaceAll("₡", "col ");
+            result = result.replaceAll("₡", "");
+            result = result.replaceAll("\\.", "");
+
+            System.out.println(result);
+
+            i = (float) (Float.parseFloat(result) * CRCToUSD);
+
+            System.out.println(i);
+
+            i = Math.round(i);
+
+            result = String.valueOf(i);
+            result = result + "0";
 
         } catch (IOException e) {
             e.printStackTrace();
@@ -294,7 +286,7 @@ public class Scrapping
             Element Price = amazonDoc.selectFirst("#priceblock_ourprice");
 
             result = Price.text();
-            result = result.replaceAll("\\$", "US ");
+            result = result.replaceAll("\\$", "");
 
         } catch (IOException e) {
             e.printStackTrace();
@@ -373,10 +365,5 @@ public class Scrapping
         //i.price_Amazon("ghost of tsushima");
         //i.score_Metacritic("ghost of tsushima");
         */
-        Scrapping t1 = new Scrapping();
-
-        System.out.println(t1.price_Amazon("Halo 4"));
-
-
     }
 }

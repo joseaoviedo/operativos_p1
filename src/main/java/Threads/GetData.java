@@ -24,7 +24,7 @@ public class GetData {
         String name = s.getTitle();
 
         Future<String> metaCritic = fixedThreadPool.submit(new Thread(name,0));
-        //Future<String> howLongTo = fixedThreadPool.submit(new Thread(name,6));
+        Future<String> howLongTo = fixedThreadPool.submit(new Thread(name,6));
 
         Future<String> eShop = null;
         Future<String> psStore = null;
@@ -48,7 +48,7 @@ public class GetData {
             steam = fixedThreadPool.submit(new Thread(name, 5));
 
         String meta = metaCritic.get();
-        //String how = howLongTo.get();
+        String how = howLongTo.get();
         String ES;
 
         if(eShop != null){
@@ -56,37 +56,37 @@ public class GetData {
 
         }else {
             assert false;
-            ES = "No disponible";
+            ES = "NA";
         }
         String Ps;
         if(psStore != null){
             Ps = psStore.get();
         }else{
             assert false;
-            Ps = "No disponible";
+            Ps = "NA";
         }
         String Ama;
         if(amazon != null){
             Ama = amazon.get();
         }else{
             assert false;
-            Ama = "No disponible";
+            Ama = "NA";
         }
         String XS;
         if(xboxStore != null){
             XS = xboxStore.get();
         }else{
             assert false;
-            XS = "No disponible";
+            XS = "NA";
         }
         String S;
         if(steam != null){
             S = steam.get();
         }else{
             assert false;
-            S = "No disponible";
+            S = "NA";
         }
-        String result = createJson(name,ES,Ps,XS,S,Ama,"how",meta);
+        String result = createJson(name,ES,Ps,XS,S,Ama,how,meta);
         fixedThreadPool.shutdown();
         return result;
     }
