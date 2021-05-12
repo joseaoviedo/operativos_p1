@@ -1,7 +1,23 @@
-The Legend of Zelda: Breath of the Wild/1/1/0/0/0
-Super Mario 3D World + Bowser's Fury/1/1/0/0/0
-Monster Hunter Rise/1/1/0/0/0
-Animal Crossing: New Horizons/1/1/0/0/0
-New Pokemon Snap/1/1/0/0/0
-God of War/1/0/1/0/0
-Dark Souls 3/1/0/1/1/1
+The Legend of Zelda: Breath of the Wild|1|0|1|0|0|60.00|https://i.pinimg.com/564x/91/96/79/91967917e73c8a51b492a598f083f9ec.jpg
+Super Mario 3D World + Bowser's Fury|1|0|1|0|0|60.00|https://pbs.twimg.com/media/EroKOOgW4AAS-ek?format=jpg&name=large
+Monster Hunter Rise|1|0|1|0|0|60.00|https://static.wikia.nocookie.net/nintendo/images/a/a9/Monster_Hunter_Rise_-_RP_%28NA%29.jpg/revision/latest?cb=20210108185513&path-prefix=es
+Animal Crossing: New Horizons|1|0|1|0|0|60.00|https://external-preview.redd.it/7ly42470O95jBbO8lJZMzbo3YkoHVdkhNKid4np1oWI.png?auto=webp&s=a58eeb31b8aae83d4701ef6fde83640effcea85b
+New Pokemon Snap|1|0|1|0|0|60.00|https://i.redd.it/ltjosq57ibb61.jpg
+God of War|0|1|1|0|0|60.00|https://www.gamereactor.eu/media/62/godwar_2126213b.png
+Dark Souls 3|1|0|0|0|1|60.00|https://upload.wikimedia.org/wikipedia/en/thumb/b/bb/Dark_souls_3_cover_art.jpg/220px-Dark_souls_3_cover_art.jpg
+Mario Kart 8 Deluxe|1|0|1|0|0|60.00|https://m.media-amazon.com/images/I/71pPBrKODxL._AC_.jpg
+Hades|1|0|0|0|1|60.00|https://howlongtobeat.com/games/62941_Hades.jpg
+Hollow Knight|1|0|1|0|0|60.00|https://images-na.ssl-images-amazon.com/images/I/71UQZy7HEjL._SL1500_.jpg
+Return of the Obra Dinn|1|0|1|0|0|60.00|https://anongamez.com/wp-content/uploads/2019/12/599919-return-of-the-obra-dinn-xbox-one-front-cover.jpg
+Super Mario 3D All-Stars|1|0|1|0|0|60.00|https://m.media-amazon.com/images/I/71f2jmOmo0L._SX342_.jpg
+Luigi's Mansion 3|1|0|1|0|0|60.00|https://s2.gaming-cdn.com/images/products/4810/orig/luigis-mansion-3-switch-cover.jpg
+Into The Breach|1|0|0|0|1|60.00|https://www.mobygames.com/images/covers/l/503391-into-the-breach-nintendo-switch-front-cover.jpg
+Untitled Goose Game|1|1|0|0|0|60.00|https://brain-images-ssl.cdn.dixons.com/9/1/10214919/u_10214919.jpg
+Among Us|1|0|0|0|1|60.00|https://www.mobygames.com/images/covers/l/704488-among-us-windows-apps-front-cover.png
+Super Mario Odyssey|1|0|1|0|0|60.00|https://pbs.twimg.com/media/DGO03xYWsAM88bJ.jpg
+Paper Mario: The Origami King|1|0|1|0|0|60.00|https://cdn02.nintendo-europe.com/media/images/05_packshots/games_13/nintendo_switch_8/PS_NSwitch_PaperMarioTheOrigamiKing_PEGI.jpg
+Pokemon Sword|1|0|1|0|0|60.00|https://static.wikia.nocookie.net/pokemonlp-utomaikeru/images/4/47/Sword_EN_boxart.png/revision/latest?cb=20200602021826
+Pokemon Shield|1|0|1|0|0|60.00|https://cdn2.bulbagarden.net/upload/thumb/8/8d/Shield_EN_boxart.png/250px-Shield_EN_boxart.png
+Super Mario Maker 2|1|0|1|0|0|60.00|https://as01.epimg.net/meristation/imagenes/2019/04/25/cover/712880071556177662.jpg
+Super Smash Bros. Ultimate|1|0|1|0|0|60.00|https://ssb.wiki.gallery/images/thumb/1/15/Super_Smash_Bros_Ultimate_Box_Art.png/1200px-Super_Smash_Bros_Ultimate_Box_Art.png
+
