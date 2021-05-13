@@ -1,7 +1,9 @@
 
 <!DOCTYPE html>
 
-<head xmlns="http://www.w3.org/1999/html" >
+<head xmlns="http://www.w3.org/1999/html" xmlns:th="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.w3.org/1999/xhtml" xmlns:th="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.w3.org/1999/xhtml">
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -9,7 +11,6 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
 
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"> </script>
 
 </head>
 <body>
@@ -70,49 +71,58 @@
 
 </div>
 
-<!-- Script para extraer los datos del Json -->
-    <script>
-        $(function() {
+<!-- Colocar Juegos (Esta seccion aun no muestra la lista de juegos) pero se supone que
+recorre la lista de juegos y la va colocando en forma de cardview
 
-            $.getJSON('games.json', function(data) {
-                $.each(data.games, function(i, f) {
-                    $("#title"+i).text(f.title);
-                    var img = "<img src="+f.imgURL+" width=\"250\" height=\"250\" >"
-                    $(img).appendTo("#imgURL"+i+" img");
-                    $("#orgPrice"+i).text(f.orgPrice);
-                    $("#newPrice"+i).text(f.newPrice);
-                    $("#hasDiscount"+i).text(f.hasDiscount);
-                    $("#discount"+i).text(f.discount);
-                    $("#timeToBeat"+i).text(f.timeToBeat);
-                    $("#store"+i).text(f.store);
-                });
-            });
-        });
-    </script>
-<!-- Ejemplos falta implementar que se creen los cardview para todos-->
+<div th:each="data: ${Data}">
+    <div class="row">
+        <div class="column">
+            <div class="card">
+                <h3>th:text="${data.getGame()}"</h3>
+                <<img src="https://i.blogs.es/f0de2f/dead-cells-dlc/original.jpeg" width="200"
+                 height="200">
+                <p>th:text="${data.getqueryDate()}"</p>
+                <p>th:text="${data.getCalificacion()}"</p>
+                <p>th:text="${data.getaverageTime()}"</p>
+            </div>
+        </div>
+</div> -->
+
+<!-- Estos son solo ejemplos, como la pagina no esta conectada con nada de Java
+     Solo quería ver como se iba a ver -->
 <div class="row">
     <div class="column">
         <div class="card">
-            <h3 id="title0"></h3>
-            <p id="orgPrice0"></p>
-            <p id="newPrice0"></p>
-            <p id="hasDiscount0"></p>
-            <p id="discount0"></p>
-            <p id="timeToBeat0"></p>
-            <p id="store0"></p>
+            <h3>Juego 1</h3>
+            <p>Some text</p>
+            <img src="https://i.blogs.es/f0de2f/dead-cells-dlc/original.jpeg" width="250"
+                 height="250">
+            <p>Some text</p>
         </div>
     </div>
+
     <div class="column">
         <div class="card">
-            <h3 id="title1"></h3>
-            <p id="orgPrice1"></p>
-            <p id="newPrice1"></p>
-            <p id="hasDiscount1"></p>
-            <p id="discount1"></p>
-            <p id="timeToBeat1"></p>
-            <p id="store1"></p>
+            <h3>Juego 2</h3>
+            <img src="https://i.blogs.es/f0de2f/dead-cells-dlc/original.jpeg" width="250"
+                 height="250">
+            <p>Some text</p>
         </div>
     </div>
+
+    <div class="column">
+        <div class="card">
+            <h3>Game 3</h3>
+            <img src="https://i.blogs.es/f0de2f/dead-cells-dlc/original.jpeg" width="250"
+                 height="250">
+            <p>Some text</p>
+        </div>
+    </div>
+
+
+</div>
+
+
 </div>
 
 </body>
