@@ -1,0 +1,34 @@
+{
+  "games": [
+    {
+      "title":"The Legend of Zelda: Breath of the Wild",
+      "imgURL":"https://i.pinimg.com/564x/91/96/79/91967917e73c8a51b492a598f083f9ec.jpg",
+      "orgPrice":"x",
+      "newPrice":"x",
+      "hasDiscount":"x",
+      "discount":"x",
+      "store":"x",
+      "timeToBeat":"x"
+    },
+    {
+      "title":"New Pokemon Snap",
+      "imgURL":"https://i.redd.it/ltjosq57ibb61.jpg",
+      "orgPrice":"x",
+      "newPrice":"x",
+      "hasDiscount":"x",
+      "discount":"x",
+      "store":"x",
+      "timeToBeat":"x"
+    },
+    {
+      "title":"Super Mario 3D All-Stars",
+      "imgURL":"https://m.media-amazon.com/images/I/71f2jmOmo0L._SX342_.jpg",
+      "orgPrice":"x",
+      "newPrice":"x",
+      "hasDiscount":"x",
+      "discount":"x",
+      "store":"x",
+      "timeToBeat":"x"
+    }
+  ]
+}
