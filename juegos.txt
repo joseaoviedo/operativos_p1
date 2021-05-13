@@ -20,4 +20,121 @@ Pokemon Sword|1|0|1|0|0|60.00|https://static.wikia.nocookie.net/pokemonlp-utomai
 Pokemon Shield|1|0|1|0|0|60.00|https://cdn2.bulbagarden.net/upload/thumb/8/8d/Shield_EN_boxart.png/250px-Shield_EN_boxart.png
 Super Mario Maker 2|1|0|1|0|0|60.00|https://as01.epimg.net/meristation/imagenes/2019/04/25/cover/712880071556177662.jpg
 Super Smash Bros. Ultimate|1|0|1|0|0|60.00|https://ssb.wiki.gallery/images/thumb/1/15/Super_Smash_Bros_Ultimate_Box_Art.png/1200px-Super_Smash_Bros_Ultimate_Box_Art.png
-
+Celeste|1|0|0|0|1|60.00|https://s3.gaming-cdn.com/images/products/8003/orig/celeste-cover.jpg
+Splatoon 2|1|0|1|0|0|60.00|https://cdn.atomix.vg/wp-content/uploads/2017/01/box-nintendoswitch-splatoon2-boxart-1484288566651_765w.jpg
+Mario + Rabbids Kingdom Battle|1|0|1|0|0|60.00|https://static.wikia.nocookie.net/melodias-videojueguiles/images/3/33/Boxart_Mario_%2B_Rabbids_Kingdom_Battle.jpg/revision/latest?cb=20200507022812&path-prefix=es
+The Legend of Zelda: Link's Awakening|1|0|1|0|0|60.00|https://i.pinimg.com/originals/88/c4/fc/88c4fc914cc4bcd1e238274e7f1aead8.jpg
+Cadence of Hyrule|1|0|1|0|0|60.00|https://pbs.twimg.com/media/EdYJxlvXsAAhBjf.jpg
+Doom|0|1|0|0|1|60.00|https://static.wikia.nocookie.net/doblaje/images/b/b7/Doom2016cover.png/revision/latest?cb=20200320000157&path-prefix=es
+Stardew Valley|1|0|0|0|1|60.00|https://store-images.s-microsoft.com/image/apps.44413.65985311967005000.4f51b5e9-febf-4990-8951-33ba59b634c9.924253ef-36b2-4cc0-8bb1-9a97c88d4828
+Dead Cell|1|0|0|0|1|60.00|shttps://s3.gaming-cdn.com/images/products/2090/orig/dead-cells-cover.jpg
+The Messenger|1|0|0|1|0|60.00|https://store-images.s-microsoft.com/image/apps.26095.13739609969923024.40b55d3d-58c8-41d4-9555-f3e899fd1add.dd82904c-d01b-4855-a1db-9bbef22cace2
+Mario Tennis Aces|1|0|1|0|0|60.00|https://art.gametdb.com/switch/coverHQ/US/ALERA.jpg
+Dark Souls Remastered|0|1|0|0|1|60.00|https://www.mobygames.com/images/covers/l/483065-dark-souls-remastered-xbox-one-front-cover.jpg
+Arms|1|0|1|0|0|60.00|https://art.gametdb.com/switch/coverHQ/US/AABQA.jpg
+Bayonetta 2|1|0|1|0|0|60.00|https://exotique.com.mt/wp-content/uploads/2019/10/bayonetta-2-bayuonetta.jpg
+New Super Mario Bros. U Deluxe|1|0|1|0|0|60.00|https://images-na.ssl-images-amazon.com/images/I/811vUy172eL._AC_SL1500_.jpg
+Death Stranding|0|1|0|0|1|60.00|https://image.api.playstation.com/vulcan/img/rnd/202009/2921/40aD0BqRUHyHdXdC6nwtwON5.png
+Final Fantasy 15|0|1|0|0|1|60.00|https://upload.wikimedia.org/wikipedia/en/5/5a/FF_XV_cover_art.jpg
+Wolfenstein 2: The New Colossus|0|1|0|1|0|60.00|https://images-na.ssl-images-amazon.com/images/I/91fR0oBKxbL.jpg
+Dishonored 2|0|1|0|0|1|60.00|https://imgc.allpostersimages.com/img/print/u-g-F8PQ8Y0.jpg?w=550&h=550&p=0
+Rise of the Tomb Raider|0|1|0|0|1|60.00|https://static.wikia.nocookie.net/tomb-raider/images/1/14/Rise_tomb_raider_bso.jpg/revision/latest/top-crop/width/360/height/450?cb=20170616181256&path-prefix=es
+Fallout 4|0|1|0|1|0|60.00|https://static.wikia.nocookie.net/fallout/images/e/e9/Fallout_4_box_cover.jpg/revision/latest?cb=20170220211249
+Titanfall 2|0|1|0|1|0|60.00|https://cdn.europosters.eu/image/750/posters/titanfall-2-cover-i31916.jpg
+Monster Hunter World|0|1|0|0|1|60.00|https://gamehero.co.za/wp-content/uploads/2019/06/monster-hunter-world-cover.jpg
+Battlefield 1|0|1|0|0|1|60.00|https://sm.ign.com/ign_es/release/b/battlefiel/battlefield-1-pc_7erp.jpg
+Detroit: Become Human|0|1|0|0|1|60.00|https://meridiem-games.com/backoffice/public/uploads/games/0z4sq7.jpg
+Assassin's Creed Odyssey|0|1|0|1|0|60.00|https://cdn11.bigcommerce.com/s-oxhrdsgr09/images/stencil/1280x1280/products/1855/2214/Screen_Shot_2018-09-26_at_10.30.34_PM__78295.1538017421.png?c=2
+Bloodborne|0|1|0|1|0|60.00|https://f4.bcbits.com/img/a4218237573_10.jpg
+Persona 5|0|1|1|0|0|60.00|https://personacentral.com/wp-content/uploads/2016/08/Persona-5-Guide-Book.jpg
+Resident Evil 7: Biohazard|0|1|0|1|0|60.00|https://www.quedato.com/wp-content/uploads/2020/07/res-7.jpg
+Nier: Automata|0|1|0|0|1|60.00|https://static.wikia.nocookie.net/doblaje-fanon-remake/images/b/ba/Nier_automata_cover.jpg/revision/latest?cb=20201212153055&path-prefix=es
+Uncharted 4: A Thief's End|0|1|1|0|0|60.00|https://static.wikia.nocookie.net/unchartedpedia/images/7/7d/Uncharted_4_A_Thief%27s_End_cover_art.jpg/revision/latest?cb=20150729093642&path-prefix=es
+Ghost of Tsushima|0|1|1|0|0|60.00|https://bloximages.chicago2.vip.townnews.com/utdailybeacon.com/content/tncms/assets/v3/editorial/9/b9/9b996e16-e3c1-11ea-aeb2-ebba0f002387/5f3fe5f85884c.image.jpg?resize=400%2C400
+What Remains of Edith Finch|0|1|0|1|0|60.00|https://media.vandal.net/m/27391/what-remains-of-edith-finch-2017425123941_5.jpg
+Grand Theft Auto 5|0|1|0|0|1|60.00|https://i.pinimg.com/originals/07/98/29/079829b12d2c514eec9dc50a78b05d18.jpg
+The Witcher 3: Wild Hunt|0|1|0|0|1|60.00|https://store-images.s-microsoft.com/image/apps.28990.69531514236615003.8f0d03d6-6311-4c21-a151-834503c2901a.d629260e-2bc4-4588-950c-f278cbc22a64
+Metal Gear Solid 5: The Phantom Pain|0|1|1|0|0|60.00|https://m.media-amazon.com/images/M/MV5BNjY5Y2Q2YjktNTIwYi00NGY4LTgyYTgtZDc3NzE0NGZmODNhXkEyXkFqcGdeQXVyNzU3Nzk4MDQ@._V1_.jpg
+Marvel's Spider-Man|0|1|1|0|0|60.00|https://images-na.ssl-images-amazon.com/images/I/518B2PBNkHL.jpg
+Red Dead Redemption 2|0|1|0|0|1|60.00|https://assets.vg247.com/current//2018/05/red_dead_redemption_2_cover_art_1.jpg
+Horizon: Zero Dawn|0|1|0|0|1|60.00|https://i.pinimg.com/originals/44/03/0b/44030b87ae8577dca0b8cdf8cb907ec8.jpg
+Last of Us Part 2|0|1|1|0|0|60.00|https://static.wikia.nocookie.net/thelastofus/images/f/f7/TLOUPartIICoverArt.png/revision/latest?cb=20200207025050
+last of us remastered|0|1|1|0|0|60.00|https://images-na.ssl-images-amazon.com/images/I/51fR72yjSFL._SX342_.jpg
+Cuphead|0|0|0|1|1|60.00|https://www.lagzero.net/wp-content/uploads/2020/03/429819-cuphead-windows-apps-front-cover.jpg
+Halo: Master Chief Collection|0|0|1|1|0|60.00|https://i.redd.it/nhrra8e8ony31.png
+Rainbow Six Siege|0|0|0|1|1|60.00|https://s1.gaming-cdn.com/images/products/2325/orig/tom-clancys-rainbow-six-siege-xbox-one-cover.jpg
+Sekiro: Shadows Die Twice|0|0|0|1|1|60.00|https://i.pinimg.com/originals/6a/3f/75/6a3f7577d80b874c7460c301d586312d.jpg
+Devil May Cry 5|0|0|0|1|1|60.00|https://static.wikia.nocookie.net/doblaje/images/e/e4/Cap_dmc5.jpg/revision/latest?cb=20190308150124&path-prefix=es
+Resident Evil 2 Remake|0|1|0|1|0|60.00|https://steamuserimages-a.akamaihd.net/ugc/938320777502349153/A23419F5A98D244A523B5B96BA4E868B834F987A/
+A Way Out|0|1|0|1|0|60.00|https://media.contentapi.ea.com/content/dam/eacom/a-way-out/common/a-way-out-origin-packart.jpg
+Overwatch|0|1|0|1|0|60.00|https://upload.wikimedia.org/wikipedia/en/5/51/Overwatch_cover_art.jpg
+Forza Horizon 4|0|0|1|1|0|60.00|https://s1.gaming-cdn.com/images/products/2682/orig/forza-horizon-4-pc-xbox-one-cover.jpg
+Ori and the Will of the Wisps|0|0|1|1|0|60.00|https://store-images.s-microsoft.com/image/apps.18799.14047496556148589.9fda5cef-7995-4dbb-a626-66d2ab3feb4f.1e167626-8b7d-47b4-9fe5-d06a43ac6677
+Control|0|0|0|1|1|60.00|https://www.mobygames.com/images/covers/l/572770-control-xbox-one-front-cover.jpg
+Gears 5|0|0|1|1|0|60.00|https://thecouch.world/wp-content/uploads/2019/05/portada-gears-5-generacionxbox-2.jpg
+Minecraft|0|1|1|0|0|60.00|https://upload.wikimedia.org/wikinews/en/7/7a/Minecraft_game_cover.jpeg
+Forza Motorsport 7|0|0|1|1|0|60.00|https://images-na.ssl-images-amazon.com/images/I/71RTZKIq4bL._SL1078_.jpg
+Ryse: Son of Rome|0|0|1|1|0|60.00|https://www.mobygames.com/images/covers/l/279560-ryse-son-of-rome-xbox-one-front-cover.png
+Sea of Thieves|0|0|1|1|0|60.00|https://images-na.ssl-images-amazon.com/images/I/81Yw7wab5yL._AC_SL1500_.jpg
+Sunset Overdrive|0|0|1|1|0|60.00|https://www.mobygames.com/images/covers/l/356287-sunset-overdrive-xbox-one-front-cover.png
+Quantum Break|0|0|1|1|0|60.00|https://images-na.ssl-images-amazon.com/images/I/71%2BEaia%2BesL._SL1001_.jpg
+Days Gone|0|1|1|0|0|60.00|https://d3ugyf2ht6aenh.cloudfront.net/stores/353/484/products/best81-db1b40a236979009e615858491341005-1024-1024.jpg
+Gran Turismo Sport|0|1|1|0|0|60.00|https://i.pinimg.com/originals/7a/40/82/7a4082f3f65cc470c5ad49808497ce81.jpg
+Horizon Zero Dawn|0|1|1|0|0|60.00|https://gamebox-eg.com/files/49824_1524075075.jpg
+Shadow of the Colossus|0|1|1|0|0|60.00|https://static.wikia.nocookie.net/t__/images/e/e5/Shadow_of_the_Colossus_PS4_cover.png/revision/latest?cb=20180208223613&path-prefix=teamico
+The Last Guardian|0|1|1|0|0|60.00|https://static.wikia.nocookie.net/t__/images/1/13/TLGvista.jpg/revision/latest?cb=20191212012111&path-prefix=teamico
+Until Dawn|0|1|1|0|0|60.00|https://static.wikia.nocookie.net/until-dawn/images/b/be/UntilDawnCover.png/revision/latest?cb=20161020183916
+Ashen|0|0|1|1|0|60.00|https://www.mobygames.com/images/covers/l/529767-ashen-windows-apps-front-cover.jpg
+Halo 5: Guardians|0|0|1|1|0|60.00|https://static.wikia.nocookie.net/halo/images/0/0a/H5G_BoxArtFinal-Front.png/revision/latest?cb=20150430022236&path-prefix=es
+Forza Motorsport 5|0|0|1|1|0|60.00|https://www.mobygames.com/images/covers/l/283636-forza-motorsport-5-xbox-one-front-cover.png
+Gears of War 4|0|0|1|1|0|60.00|https://cdn.europosters.eu/image/750/posters/gears-of-war-4-game-cover-i30650.jpg
+Rare Replay|0|0|1|1|0|60.00|https://m.media-amazon.com/images/I/81s9mAkhuZL._AC_SL1500_.jpg
+Killzone: Shadow Fall|0|1|1|0|0|60.00|https://images-na.ssl-images-amazon.com/images/I/81NMsb8fSjL._SL1500_.jpg
+Kingdom Hearts: The Story So Far|0|1|1|0|0|60.00|https://images-na.ssl-images-amazon.com/images/I/91xJtGA8dWL._SL1500_.jpg
+Chaos Child|0|1|1|0|0|60.00|https://cdn11.bigcommerce.com/s-boldppk8jp/images/stencil/1280x1280/products/611/571/Chaos_Child_PS4__25272.1572859904.jpg?c=1
+God of War III Remastered|0|1|1|0|0|60.00|https://images-na.ssl-images-amazon.com/images/I/71npLTOmSyL._SL1000_.jpg
+Gravity Rush Remastered|0|1|1|0|0|60.00|https://images-na.ssl-images-amazon.com/images/I/81utonjQj6L._SL1500_.jpg
+Gravity Rush 2|0|1|1|0|0|60.00|https://www.mobygames.com/images/covers/l/480107-gravity-rush-2-playstation-4-front-cover.jpg
+inFAMOUS: Second Son|0|1|1|0|0|60.00|https://static.wikia.nocookie.net/infamous/images/a/ab/Second_Son_front_cover.jpg/revision/latest?cb=20140322154820
+Marvel's Spider-Man: Miles Morales|0|1|1|0|0|60.00|https://i.pinimg.com/originals/81/87/cc/8187cc8374ec87df09e21ca048a74736.jpg
+The Order: 1886|0|1|1|0|0|60.00|https://images-na.ssl-images-amazon.com/images/I/61H8t7P249L._SX342_.jpg
+Sakura Wars|0|1|1|0|0|60.00|https://resize.cdn.otakumode.com/full/u/8a6a9d4d4e014b0584e47682d8ced008.jpg
+Samurai Warriors 4|0|1|1|0|0|60.00|https://m.media-amazon.com/images/I/91AQs0044IL._SL1500_.jpg
+Uncharted: The Nathan Drake Collection|0|1|1|0|0|60.00|https://gorillagamesking.com/wp-content/uploads/2019/11/uncharted-the-nathan-drake-collection.jpg
+Uncharted: The Lost Legacy|0|1|1|0|0|60.00|https://static.wikia.nocookie.net/uncharted/images/7/7c/The_Lost_Legacy_front_cover_%28US%29.png/revision/latest?cb=20200614225556
+MLB The Show 20|0|1|1|0|0|60.00|https://images-na.ssl-images-amazon.com/images/I/61TnewnWGgL._AC_SX425_.jpg
+1-2-Switch|1|0|1|0|0|60.00|https://www.nintenderos.com/wp-content/uploads/2017/01/1-2-switch-cover-caratula-boxart.jpg
+Astral Chain|1|0|1|0|0|60.00|https://images-na.ssl-images-amazon.com/images/I/91spkY3n6VL._SL1500_.jpg
+Donkey Kong Country: Tropical Freeze|1|0|1|0|0|60.00|https://art.gametdb.com/switch/coverHQ/US/AFWTA.jpg
+Fire Emblem: Three Houses|1|0|1|0|0|60.00|https://i.redd.it/rnwtbcm7myk21.jpg
+Fitness Boxing 2: Rhythm & Exercise|1|0|1|0|0|60.00|https://images-na.ssl-images-amazon.com/images/I/81I6f018foL._SL1500_.jpg
+Gear.Club Unlimited 2|1|0|1|0|0|60.00|https://images-na.ssl-images-amazon.com/images/I/81IQs93R5FL._SL1500_.jpg
+Hyrule Warriors: Age of Calamity|1|0|1|0|0|60.00|https://i.redd.it/zjt5ygks0yl51.jpg
+Kirby: Star Allies|1|0|0|0|0|60.00|https://images-na.ssl-images-amazon.com/images/I/81kvdvvk%2BDL._SY445_.jpg
+Pikmin 3 Deluxe|1|0|1|0|0|60.00|https://images-na.ssl-images-amazon.com/images/I/71Rbq4jpuDL._SY445_.jpg
+Pokemon: Let's Go, Pikachu|1|0|1|0|0|60.00|https://media.vandal.net/m/45005/pokemon-lets-go-pikachu-lets-go-eevee-2018531203922_2.jpg
+Pokemon: Let's Go, Eevee|1|0|1|0|0|60.00|https://images-na.ssl-images-amazon.com/images/I/716xLw0R9%2BL._SY445_.jpg
+Pokemon Mystery Dungeon: Rescue Team DX|1|0|1|0|0|60.00|https://s2.gaming-cdn.com/images/products/6151/orig/pokemon-mystery-dungeon-rescue-team-dx-switch-cover.jpg
+Pokken Tournament DX|1|0|1|0|0|60.00|https://images-na.ssl-images-amazon.com/images/I/51EezGg6vyL.jpg
+Super Mario Party|1|0|0|0|0|60.00|https://www.gamesmen.com.au/media/catalog/product/cache/1/image/590x590/cbcbef48e5e3bcce7c7ed908f20bc5b4/s/u/super_mario_party_switch_cover_new.jpg
+Xenoblade Chronicles: Definitive Edition|1|0|1|0|0|60.00|https://m.media-amazon.com/images/I/912Lx7NR-lL._SL1500_.jpg
+Xenoblade Chronicles 2: Torna ~ The Golden Country|1|0|1|0|0|60.00|https://images-na.ssl-images-amazon.com/images/I/81L1%2BGQIL5L._SL1500_.jpg
+Yoshi's Crafted World|1|0|1|0|0|60.00|https://images-na.ssl-images-amazon.com/images/I/81K9ozFhJCL._SL1500_.jpg
+Resident Evil Village|0|1|0|0|1|60.00|https://www.igroshop.com/images/detailed/9/Village_box_art_m5m7-1w.jpg
+Doom Eternal|0|1|0|0|1|60.00|https://steamuserimages-a.akamaihd.net/ugc/800992064379440472/9755AC3E97FFDB2A002306C83E2ED2950AFF9EB9/
+Half-Life: Alyx|0|0|0|0|1|60.00|https://upload.wikimedia.org/wikipedia/en/thumb/4/49/Half-Life_Alyx_Cover_Art.jpg/220px-Half-Life_Alyx_Cover_Art.jpg
+Terraria|0|0|0|1|1|60.00|https://meliodasnet.bookmark.com/assets/public/papu/terraria-cover.png
+call of duty black ops 4|0|1|1|0|0|60.00|https://images-na.ssl-images-amazon.com/images/I/81E5fUW19gL._SX425_.jpg
+Call of Duty: Black Ops Cold War|0|1|1|0|0|60.00|https://www.egames.news/__export/1613691103774/sites/debate/img/2021/02/18/call-of-duty-black-ops-cold-war-cover-art-revealed_k52d_crop1613691035251.jpg_423682103.jpg
+Dead or alive 6|0|1|1|0|0|60.00|https://images-na.ssl-images-amazon.com/images/I/81bgnUBAt0L._SL1500_.jpg
+Dreams|0|1|1|0|0|60.00|https://images-na.ssl-images-amazon.com/images/I/71Q9zoBAHoL._SL1500_.jpg
+Knack 2|0|1|1|0|0|60.00|https://images-na.ssl-images-amazon.com/images/I/610tXIWKk7L.jpg
+Cyberpunk 2077|0|0|0|0|1|60.00|https://static.wikia.nocookie.net/g-c-a/images/0/0b/Cover-art-6.jpg/revision/latest?cb=20210104020439
+MLB The Show 19|0|1|1|0|0|60.00|https://images-na.ssl-images-amazon.com/images/I/51xL72XgDNL._AC_.jpg
+MLB The Show 18|0|1|1|0|0|60.00|https://lh3.googleusercontent.com/proxy/MXlyhP6wuxu5kzKTecdBq4KiDoo_jIejLgn6e4ZGbNut8EZs5ddasFmlfUdauemFgFLY6kpy6ASfgmv77R1f7SNr6ClClVuPJSgEe00YNTCNJfQpg-M5_6oCklfRVfpXla2PBgPDf8cz
+The Seven Deadly Sins: Knights of Britannia|0|1|1|0|0|60.00|https://images-na.ssl-images-amazon.com/images/I/913BoUS-X%2BL._SX425_.jpg
+Star Ocean: Integrity and Faithlessness|0|1|1|0|0|60.00|https://images-na.ssl-images-amazon.com/images/I/61VSCzcjkwL._AC_SX385_.jpg
+Tearaway Unfolded ps4|0|1|1|0|0|60.00|https://images-na.ssl-images-amazon.com/images/I/51lXYI64KAL._SX385_.jpg
+That's You! ps4|0|1|1|0|0|60.00|https://images-na.ssl-images-amazon.com/images/I/51t2mK-H-5L.jpg
+Touhou Genso Rondo: Bullet Ballet|0|1|1|0|0|60.00|https://images-na.ssl-images-amazon.com/images/I/81ZiszLImEL._SL1500_.jpg
+WipEout Omega Collection|0|1|0|0|0|60.00|https://limitedgamenews.com/wp-content/uploads/2018/04/wipeout-omega-collection-ps4-psvr-cover-2.jpg
