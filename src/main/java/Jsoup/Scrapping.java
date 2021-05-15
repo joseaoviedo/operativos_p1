@@ -292,6 +292,8 @@ public class Scrapping
             e.printStackTrace();
         } catch (IndexOutOfBoundsException e) {
             System.out.println("Your search returned 0 results");
+        } catch (Exception e){
+            e.printStackTrace();
         }
         return result;
 
@@ -318,7 +320,7 @@ public class Scrapping
             WebElement firstItem = driver.findElement(By.xpath("//*[@id=\"global_search_content\"]/ul/li[1]/div[2]/h3/a"));
             firstItem.click();
             Thread.sleep(2000);
-            WebElement timeElement = driver.findElement(By.xpath("/html/body/div[1]/div/div[3]/div/div[2]/div[1]/ul/li[4]/div"));
+            WebElement timeElement = driver.findElement(By.xpath("/html/body/div[1]/div/div[3]/div/div[2]/div[4]/table/tbody[4]/tr/td[3]"));
             time = timeElement.getText();
             driver.close();
 
@@ -332,38 +334,5 @@ public class Scrapping
             e.printStackTrace();
         }
         return time;
-    }
-
-
-    public static void main(String[] args) throws IOException, ExecutionException, InterruptedException {
-        /*
-        Scrapping t1 = new Scrapping("Dead Cells", 0);
-        Scrapping t2 = new Scrapping("Dead Cells", 1);
-        Scrapping t3 = new Scrapping("Dead Cells", 2);
-        Scrapping t4 = new Scrapping("Dead Cells", 6);
-
-        //Scrapping i = new Scrapping("Mario", 0);
-        //System.out.println(i.precio_NintendoEshop("Mario"));
-
-        Future<String> future0 = t1.fixedThreadPool.submit(t1);
-        Future<String> future1 = t2.fixedThreadPool.submit(t2);
-        Future<String> future2 = t3.fixedThreadPool.submit(t3);
-        Future<String> future6 = t4.fixedThreadPool.submit(t4);
-
-
-
-        System.out.println("Dead Cells: ");
-        System.out.println("Score:" + future0.get());
-        System.out.println("EShop: " + future1.get());
-        System.out.println("psStore:" + future2.get());
-        System.out.println("Time: " + future6.get());
-
-/*
-        //i.score_Metacritic("Dead Cells");
-        //i.price_MicrosoftXbox("Dead Cells");
-        //i.price_Amazon("Dead Cells");
-        //i.price_Amazon("ghost of tsushima");
-        //i.score_Metacritic("ghost of tsushima");
-        */
     }
 }

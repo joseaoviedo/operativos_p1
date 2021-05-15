@@ -35,11 +35,9 @@ public class StatusNotifier {
         }
     }
 
-    public static void sendResult(String result){
+    public static void sendResult(JSONObject object){
         try {
             Socket clientSocket = new Socket(Constants.SERVER_IP, Constants.SERVER_PORT);
-            JSONObject object = new JSONObject();
-            object.put("result", result);
             DataOutputStream outputStream = new DataOutputStream(clientSocket.getOutputStream());
             outputStream.writeUTF(object.toString());
             outputStream.close();
