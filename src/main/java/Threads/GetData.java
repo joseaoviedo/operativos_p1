@@ -81,7 +81,7 @@ public class GetData {
                 assert false;
                 S = "NA";
             }
-            object.put("result", "sucess");
+            object.put("result", "success");
             object.put("title", name);
             object.put("eShop", ES);
             object.put("psStore", Ps);

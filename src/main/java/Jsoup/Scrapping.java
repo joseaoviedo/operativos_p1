@@ -38,7 +38,8 @@ public class Scrapping
                     .build()
     );
 
-    Double CRCToUSD = converter.rate("CRC", "USD");
+    //Double CRCToUSD = converter.rate("CRC", "USD");
+    Double CRCToUSD = 0.0016;
 
 
     public String precio_playStation(String Name) throws IOException {
@@ -77,6 +78,8 @@ public class Scrapping
             e.printStackTrace();
         } catch (IndexOutOfBoundsException e) {
             System.out.println("Your search returned 0 results");
+        } catch (Exception e){
+            e.printStackTrace();
         }
         return result;
     }
@@ -114,6 +117,8 @@ public class Scrapping
             e.printStackTrace();
         } catch (IndexOutOfBoundsException e) {
             System.out.println("Your search returned 0 results");
+        } catch (Exception e){
+            e.printStackTrace();
         }
         return result;
     }
@@ -152,6 +157,8 @@ public class Scrapping
             e.printStackTrace();
         } catch (IndexOutOfBoundsException e) {
             System.out.println("Your search returned 0 results");
+        } catch (Exception e){
+            e.printStackTrace();
         }
         return price;
     }
@@ -188,6 +195,8 @@ public class Scrapping
             e.printStackTrace();
         } catch (IndexOutOfBoundsException e) {
             System.out.println("Your search returned 0 results");
+        } catch (Exception e){
+            e.printStackTrace();
         }
         return result;
     }
@@ -254,12 +263,14 @@ public class Scrapping
             e.printStackTrace();
         } catch (IndexOutOfBoundsException e) {
             System.out.println("Your search returned 0 results");
+        } catch (Exception e){
+            e.printStackTrace();
         }
         return result;
     }
 
     public String price_Amazon(String Name) throws IOException {
-
+        /*
         String result = null;
         try {
 
@@ -296,7 +307,8 @@ public class Scrapping
             e.printStackTrace();
         }
         return result;
-
+        */
+        return "NA";
     }
 
     public String timeToComplete(String name){
@@ -320,7 +332,7 @@ public class Scrapping
             WebElement firstItem = driver.findElement(By.xpath("//*[@id=\"global_search_content\"]/ul/li[1]/div[2]/h3/a"));
             firstItem.click();
             Thread.sleep(2000);
-            WebElement timeElement = driver.findElement(By.xpath("/html/body/div[1]/div/div[3]/div/div[2]/div[4]/table/tbody[4]/tr/td[3]"));
+            WebElement timeElement = driver.findElement(By.xpath("/html/body/div[1]/div/div[3]/div/div[2]/div[1]/ul/li[4]/div"));
             time = timeElement.getText();
             driver.close();
 
@@ -331,6 +343,8 @@ public class Scrapping
             System.out.println("Element not found");
             e.printStackTrace();
         } catch (InterruptedException e) {
+            e.printStackTrace();
+        } catch (Exception e){
             e.printStackTrace();
         }
         return time;

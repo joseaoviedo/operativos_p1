@@ -1,5 +1,6 @@
 package Selenium;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -17,7 +18,7 @@ public class Base {
     }
 
     public WebDriver fireFoxDriverConnection(){
-        System.setProperty("webdriver.gecko.driver","src/main/resources/Driver/geckodriver.exe");
+        WebDriverManager.firefoxdriver().setup();
         driver = new FirefoxDriver();
         return driver;
     }

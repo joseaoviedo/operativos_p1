@@ -37,6 +37,7 @@ public class StatusNotifier {
 
     public static void sendResult(JSONObject object){
         try {
+            System.out.println("Sending: " + object);
             Socket clientSocket = new Socket(Constants.SERVER_IP, Constants.SERVER_PORT);
             DataOutputStream outputStream = new DataOutputStream(clientSocket.getOutputStream());
             outputStream.writeUTF(object.toString());
