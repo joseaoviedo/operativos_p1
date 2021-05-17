@@ -3,8 +3,8 @@
     {
       "title":"The Legend of Zelda: Breath of the Wild",
       "imgURL":"https://i.pinimg.com/564x/91/96/79/91967917e73c8a51b492a598f083f9ec.jpg",
-      "orgPrice":"x",
-      "newPrice":"x",
+      "orgPrice":"2000",
+      "newPrice":"1500",
       "hasDiscount":"x",
       "discount":"x",
       "store":"x",
@@ -13,6 +13,16 @@
     {
       "title":"New Pokemon Snap",
       "imgURL":"https://i.redd.it/ltjosq57ibb61.jpg",
+      "orgPrice":"2300",
+      "newPrice":"1000",
+      "hasDiscount":"x",
+      "discount":"x",
+      "store":"x",
+      "timeToBeat":"x"
+    },
+    {
+      "title":"Among Us",
+      "imgURL":"https://www.mobygames.com/images/covers/l/704488-among-us-windows-apps-front-cover.png",
       "orgPrice":"x",
       "newPrice":"x",
       "hasDiscount":"x",
@@ -25,6 +35,56 @@
       "imgURL":"https://m.media-amazon.com/images/I/71f2jmOmo0L._SX342_.jpg",
       "orgPrice":"x",
       "newPrice":"x",
+      "hasDiscount":"x",
+      "discount":"x",
+      "store":"x",
+      "timeToBeat":"x"
+    },
+    {
+      "title":"Monster Hunter World",
+      "imgURL":"https://gamehero.co.za/wp-content/uploads/2019/06/monster-hunter-world-cover.jpg",
+      "orgPrice":"x",
+      "newPrice":"x",
+      "hasDiscount":"x",
+      "discount":"x",
+      "store":"x",
+      "timeToBeat":"x"
+    },
+    {
+      "title":"call of duty black ops",
+      "imgURL":"https://images-na.ssl-images-amazon.com/images/I/81E5fUW19gL._SX425_.jpg",
+      "orgPrice":"5000",
+      "newPrice":"3000",
+      "hasDiscount":"x",
+      "discount":"x",
+      "store":"x",
+      "timeToBeat":"x"
+    },
+    {
+      "title":"That's You! ps4",
+      "imgURL":"https://images-na.ssl-images-amazon.com/images/I/51t2mK-H-5L.jpg",
+      "orgPrice":"5000",
+      "newPrice":"3000",
+      "hasDiscount":"x",
+      "discount":"x",
+      "store":"x",
+      "timeToBeat":"x"
+    },
+    {
+      "title":"Horizon: Zero Dawn",
+      "imgURL":"https://i.pinimg.com/originals/44/03/0b/44030b87ae8577dca0b8cdf8cb907ec8.jpg",
+      "orgPrice":"12000",
+      "newPrice":"4000",
+      "hasDiscount":"x",
+      "discount":"x",
+      "store":"x",
+      "timeToBeat":"x"
+    },
+    {
+      "title":"Resident Evil 7: Biohazard",
+      "imgURL":"https://www.quedato.com/wp-content/uploads/2020/07/res-7.jpg",
+      "orgPrice":"12000",
+      "newPrice":"8000",
       "hasDiscount":"x",
       "discount":"x",
       "store":"x",
