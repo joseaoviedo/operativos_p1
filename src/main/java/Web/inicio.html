@@ -1,16 +1,16 @@
 
 <!DOCTYPE html>
+<html lang="es">
 
-<head xmlns="http://www.w3.org/1999/html" xmlns:th="http://www.w3.org/1999/xhtml"
-      xmlns:th="http://www.w3.org/1999/xhtml" xmlns:th="http://www.w3.org/1999/xhtml"
-      xmlns:th="http://www.w3.org/1999/xhtml">
+<head xmlns="http://www.w3.org/1999/html" >
 
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <link rel="stylesheet" type="text/css" href="pagina.css"/>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
 
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" >
+
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"> </script>
 
 </head>
 <body>
@@ -71,59 +71,84 @@
 
 </div>
 
-<!-- Colocar Juegos (Esta seccion aun no muestra la lista de juegos) pero se supone que
-recorre la lista de juegos y la va colocando en forma de cardview
+<!-- Script para extraer los datos del Json y generar los cardviews-->
+<script>
+    window.onload = function () {
+        const DOMitems = document.querySelector('#items');
+        $(function() {
 
-<div th:each="data: ${Data}">
-    <div class="row">
-        <div class="column">
-            <div class="card">
-                <h3>th:text="${data.getGame()}"</h3>
-                <<img src="https://i.blogs.es/f0de2f/dead-cells-dlc/original.jpeg" width="200"
-                 height="200">
-                <p>th:text="${data.getqueryDate()}"</p>
-                <p>th:text="${data.getCalificacion()}"</p>
-                <p>th:text="${data.getaverageTime()}"</p>
-            </div>
-        </div>
-</div> -->
+            $.getJSON('games.json', function(data) {
+                $.each(data.games, function(i, f) {
+
+                    // Estructura
+                    const miNodo = document.createElement('div');
+                    miNodo.classList.add('card', 'col-sm-3');
+                    // Body
+                    const miNodoCardBody = document.createElement('div');
+                    miNodoCardBody.classList.add('card-body');
+                    // Titulo
+                    const miNodoTitle = document.createElement('h5');
+                    miNodoTitle.classList.add('card-title');
+                    miNodoTitle.textContent = f.title;
+                    // Imagen
+                    const miNodoImagen = document.createElement('img');
+                    miNodoImagen.classList.add('img-fluid');
+                    miNodoImagen.setAttribute('src',f.imgURL);
+                    // OrgPrecio
+                    const miNodoOrgPrecio = document.createElement('h6');
+                    miNodoOrgPrecio.classList.add('card-text');
+                    miNodoOrgPrecio.textContent = 'Precio Original: ₡'+f.orgPrice ;
+                    // NewPrecio
+                    const miNodoNewPrecio = document.createElement('h6');
+                    miNodoNewPrecio.classList.add('card-text');
+                    miNodoNewPrecio.textContent = 'Precio Nuevo: ₡'+ f.newPrice;
+                    // hasDiscount
+                    const miNodoHasDiscount= document.createElement('h6');
+                    miNodoHasDiscount.classList.add('card-text');
+                    miNodoHasDiscount.textContent = 'Con Descuento: '+ f.hasDiscount;
+                    // Discount
+                    const miNodoDiscount = document.createElement('h6');
+                    miNodoDiscount.classList.add('card-text');
+                    miNodoDiscount.textContent = 'Descuento: '+f.discount;
+                    // Store
+                    const miNodoStore = document.createElement('h6');
+                    miNodoStore.classList.add('card-text');
+                    miNodoStore.textContent = 'Tienda: '+ f.store;
+                    // timeToBeat
+                    const miNodoTimeToBeat = document.createElement('h6');
+                    miNodoTimeToBeat.classList.add('card-text');
+                    miNodoTimeToBeat.textContent = 'Time to Beat: '+ f.timeToBeat;
+
+
+                    // Insertamos
+                    miNodoCardBody.appendChild(miNodoImagen);
+                    miNodoCardBody.appendChild(miNodoTitle);
+                    miNodoCardBody.appendChild(miNodoOrgPrecio);
+                    miNodoCardBody.appendChild(miNodoNewPrecio);
+                    miNodoCardBody.appendChild(miNodoHasDiscount);
+                    miNodoCardBody.appendChild(miNodoDiscount);
+                    miNodoCardBody.appendChild(miNodoStore);
+                    miNodoCardBody.appendChild(miNodoTimeToBeat);
+                    miNodo.appendChild(miNodoCardBody);
+                    DOMitems.appendChild(miNodo);
+                });
+            });
+        });
+
+    }
+</script>
 
 <!-- Estos son solo ejemplos, como la pagina no esta conectada con nada de Java
      Solo quería ver como se iba a ver -->
-<div class="row">
-    <div class="column">
-        <div class="card">
-            <h3>Juego 1</h3>
-            <p>Some text</p>
-            <img src="https://i.blogs.es/f0de2f/dead-cells-dlc/original.jpeg" width="250"
-                 height="250">
-            <p>Some text</p>
-        </div>
+<div class="container">
+    <div class="row">
+        <!-- Elementos generados a partir del JSON -->
+        <main id="items" class="col-sm-13 row"></main>
+
     </div>
-
-    <div class="column">
-        <div class="card">
-            <h3>Juego 2</h3>
-            <img src="https://i.blogs.es/f0de2f/dead-cells-dlc/original.jpeg" width="250"
-                 height="250">
-            <p>Some text</p>
-        </div>
-    </div>
-
-    <div class="column">
-        <div class="card">
-            <h3>Game 3</h3>
-            <img src="https://i.blogs.es/f0de2f/dead-cells-dlc/original.jpeg" width="250"
-                 height="250">
-            <p>Some text</p>
-        </div>
-    </div>
-
-
 </div>
 
 
-</div>
 
-</body>
-</html>
+    </body>
+    </html>
